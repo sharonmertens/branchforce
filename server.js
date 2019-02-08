@@ -26,10 +26,6 @@ app.use('/users', userController);
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
-//Trip controller
-const tripsController = require('./controllers/trips.js')
-app.use('/trips.js', tripsController)
-
 // =======================================
 //              LISTENER
 // =======================================
