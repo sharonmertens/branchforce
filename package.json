@@ -1,0 +1,26 @@
+{
+  "name": "branchforce",
+  "version": "1.0.0",
+  "description": "MEAN Stack Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharonmertens/branchforce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharonmertens/branchforce/issues"
+  },
+  "homepage": "https://github.com/sharonmertens/branchforce#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.10"
+  }
+}
