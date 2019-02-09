@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="TripApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Travel App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+  </head>
+  <body ng-controller="TripController as trip">
+    <h1>Traveleritis App</h1>
+
+      {{ trip.foo }}
+
+    <div ng-controller="AuthController as auth">
+      <!-- Sign Up Form -->
+      <h2>Sign Up</h2>
+      <form ng-submit="auth.createUser()">
+        <input type="text" ng-model="auth.username" placeholder="Username">
+        <input type="password" ng-model="auth.password" placeholder="Password">
+        <input type="submit" value="Sign Up">
+      </form>
+      <!-- Log In Form -->
+      <h2>Log In</h2>
+      <form ng-submit="auth.logIn()">
+        <input type="text" ng-model="auth.usernameLogIn" placeholder="Username">
+        <input type="password" ng-model="auth.passwordLogIn" placeholder="Password">
+        <input type="submit" value="Log In">
+      </form>
+    </div>
+  </body>
+</html>
