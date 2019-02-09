@@ -16,8 +16,8 @@ app.controller('TripController', ['$http', function($http){
       console.log(response);
     }, function () {
       console.log('error');
-    }
-  });
+    })
+};
 
   // function to log in
   this.logIn = function () {
