@@ -1,10 +1,22 @@
 const app = angular.module('TripApp', []);
 
+// ========================= //
+//      TRIP CONTROLLER      //
+// ========================= //
 app.controller('TripController', ['$http', function($http){
   this.foo = "bar"
+}])
 
-  // function to create user
+// ================================== //
+//      AUTHORIZATION CONTROLLER      //
+// ================================== //
+app.controller('AuthController', ['$http', function($http){
+
+  // ================================== //
+  //          CREATE USER               //
+  // ================================== //
   this.createUser = function () {
+    console.log("Create user click works");
     $http({
       method: 'POST',
       url: '/users',
@@ -17,9 +29,10 @@ app.controller('TripController', ['$http', function($http){
     }, function () {
       console.log('error');
     })
-};
-
-  // function to log in
+}
+  // ================================== //
+  //           LOG IN USER              //
+  // ================================== //
   this.logIn = function () {
     $http({
       method: 'POST',

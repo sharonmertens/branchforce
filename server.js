@@ -13,10 +13,21 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.use(session({
-  secret: 'brandforceforever',
+  secret: 'branchforceforever',
   resave: false,
   saveUninitialized: false
 }));
+
+app.get('/mytrips', (req, res) => {
+  if(req.session.currentUser){
+      res.json(req.session.currentUser)
+  } else {
+      res.status(401).json({
+        status: 401,
+        message: 'User not logged in!'
+      })
+  }
+})
 
 // Users controller
 const userController = require('./controllers/users.js');
