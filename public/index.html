@@ -12,11 +12,16 @@
       {{ trip.foo }}
 
     <h2>Log In</h2>
+    <form>
       <input type="text" name="" placeholder="Username">
       <input type="text" name="" placeholder="Password">
-
+      <input type="submit" value="Log In">
+    </form>
     <h2>Sign Up</h2>
+    <form ng-submit="trip.createUser()">
       <input type="text" name="" placeholder="Username">
       <input type="text" name="" placeholder="Password">
+      <input type="submit" value="Sign Up">
+    </form>
   </body>
 </html>
