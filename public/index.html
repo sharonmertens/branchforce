@@ -11,17 +11,21 @@
 
       {{ trip.foo }}
 
-    <h2>Log In</h2>
-    <form ng-submit="trip.logIn()">
-      <input type="text" ng-model="trip.usernameLogIn" placeholder="Username">
-      <input type="text" ng-model="trip.passwrdLogIn" placeholder="Password">
-      <input type="submit" value="Log In">
-    </form>
-    <h2>Sign Up</h2>
-    <form ng-submit="trip.createUser()">
-      <input type="text" name="" placeholder="Username">
-      <input type="text" name="" placeholder="Password">
-      <input type="submit" value="Sign Up">
-    </form>
+    <div ng-controller="AuthController as auth">
+      <!-- Sign Up Form -->
+      <h2>Sign Up</h2>
+      <form ng-submit="auth.createUser()">
+        <input type="text" ng-model="auth.username" placeholder="Username">
+        <input type="password" ng-model="auth.password" placeholder="Password">
+        <input type="submit" value="Sign Up">
+      </form>
+      <!-- Log In Form -->
+      <h2>Log In</h2>
+      <form ng-submit="auth.logIn()">
+        <input type="text" ng-model="auth.usernameLogIn" placeholder="Username">
+        <input type="password" ng-model="auth.passwordLogIn" placeholder="Password">
+        <input type="submit" value="Log In">
+      </form>
+    </div>
   </body>
 </html>

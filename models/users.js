@@ -1,7 +1,16 @@
 const mongoose = require('mongoose');
+
 const userSchema = mongoose.Schema({
-  username:{type:String, required:true},
-  password:{type:String, required:true},
+  username:
+    {
+    type:String,
+    required:true
+    },
+  password:
+    {
+    type:String,
+    required:true
+    },
   budget:Number,
   trips:[{
     overallPrice:Number,
@@ -11,4 +20,6 @@ const userSchema = mongoose.Schema({
   }]
 })
 
-module.exports = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+
+module.exports = User
