@@ -2,25 +2,76 @@
 <div>
   <!-- 2 search inputs . One takes a loacation the other
 takes a span of days -->
+<form ng-submit="trip.populatePage()">
+  <input type="text" placeholder="destination" ng-model="trip.location">
+  <input type="submit" value="Search">
+</form>
 
 <!-- When submitted the inforamtion gets returned on the page
 but comes back hidden and the trip catigories wich were
 previously hidden gets revelead  -->
 
+<span ng-if="trip.listOfDestinations">
 <!-- These where hidden but after form is submitted gets revealed
 When one of these are clicked the hidden search information
 that was retrived from before gets displayed  -->
 <h3>Flights</h3>
+
 <!-- The information here is dynamic depending on the
 search paramiters. You can click a button on them to save to
 the user cart. Only one flight and hotel can be saved
 to the cart but multiple activites could be added -->
-
+<ul>
+  <li  ng-if="destination.type === 'flight'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} Flight to {{destination.location}}: {{destination.price | currency}}
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
+</ul>
 
 <h3>Hotels</h3>
 
+<ul>
+  <li  ng-if="destination.type === 'hotel'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
+</ul>
+
 <h3>Activites</h3>
+
+<ul>
+  <li  ng-if="destination.type === 'activity'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
+</ul>
 
 <!-- extra: a button to refresh the search. Wipes out previous
 search results and hides the catigorys -->
+</span>
+
+
 </div>
+
+<!-- Users trip shopping cart -->
+<div >
+  <h2>Trip shopping cart</h2>
+  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
+</div>
+
+
+
+
+
+
+
+<!--  -->

@@ -10,6 +10,37 @@ app.controller('TripController', ['$http', function($http){
   this.changeInclude = function (path) {
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
+
+  // user is searching for flights and Hotels
+  this.populatePage = function () {
+    $http({
+      method:'GET',
+      url:'/users/trips/' + this.location
+    }).then(function (res) {
+      tripCtrl.listOfDestinations = res.data
+      console.log(res.data);
+    },function (err) {
+      console.log(err);
+    })
+  }
+
+  // user stores their trip data
+  this.bookmarkedTrip = []
+
+  this.storeData = function (trip) {
+    let found = false
+    for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
+      if(tripCtrl.bookmarkedTrip[i].type === trip.type){
+        found = true
+        tripCtrl.bookmarkedTrip[i] = trip;
+      }
+    }
+    if(found === false){
+      tripCtrl.bookmarkedTrip.push(trip)
+    }
+    console.log(tripCtrl.bookmarkedTrip);
+  }
+
 }])
 
 // ================================== //
