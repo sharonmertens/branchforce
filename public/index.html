@@ -9,7 +9,6 @@
   <body ng-controller="TripController as trip">
     <h1>Traveleritis App</h1>
 
-      {{ trip.foo }}
 
     <div ng-controller="AuthController as auth">
       <!-- Sign Up Form -->
@@ -29,7 +28,9 @@
       </form>
       </span>
 
-      <button ng-if="auth.userInfo" ng-click="auth.logOut()">Log Out</button>
+      <span ng-if="auth.userInfo">
+      <button ng-click="auth.logOut()">Log Out</button>
+      </span>
     </div>
   </body>
 </html>
