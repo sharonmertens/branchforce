@@ -10,6 +10,20 @@ app.controller('TripController', ['$http', function($http){
   this.changeInclude = function (path) {
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
+
+  // user is searching for flights and Hotels
+  this.populatePage = function () {
+    $http({
+      method:'GET',
+      url:'/users/trips/' + this.location
+    }).then(function (res) {
+      tripCtrl.listOfTrips = res.data
+      console.log(res.data);
+    },function (err) {
+      console.log(err);
+    })
+  }
+
 }])
 
 // ================================== //

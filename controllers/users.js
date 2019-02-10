@@ -26,4 +26,17 @@ router.put('/:id',(req,res) => {
   })
 })
 
+
+// Sending avaliable trip info back to the user
+const avaliableTrips = require('../models/trips.js');
+router.get('/trips/:location',(req,res) => {
+  res.json(avaliableTrips.filter((trip) => {
+    return trip.location === req.params.location
+  }))
+})
+
+
+
+
+
 module.exports = router;
