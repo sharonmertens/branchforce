@@ -24,6 +24,23 @@ app.controller('TripController', ['$http', function($http){
     })
   }
 
+  // user stores their trip data
+  this.bookmarkedTrip = []
+
+  this.storeData = function (trip) {
+    let found = false
+    for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
+      if(tripCtrl.bookmarkedTrip[i].type === trip.type){
+        found = true
+        tripCtrl.bookmarkedTrip[i] = trip;
+      }
+    }
+    if(found === false){
+      tripCtrl.bookmarkedTrip.push(trip)
+    }
+    console.log(tripCtrl.bookmarkedTrip);
+  }
+
 }])
 
 // ================================== //

@@ -11,7 +11,7 @@ takes a span of days -->
 but comes back hidden and the trip catigories wich were
 previously hidden gets revelead  -->
 
-<span ng-if="trip.listOfDestinations" ng-repeat="destination in trip.listOfDestinations">
+<span ng-if="trip.listOfDestinations">
 <!-- These where hidden but after form is submitted gets revealed
 When one of these are clicked the hidden search information
 that was retrived from before gets displayed  -->
@@ -21,15 +21,54 @@ that was retrived from before gets displayed  -->
 search paramiters. You can click a button on them to save to
 the user cart. Only one flight and hotel can be saved
 to the cart but multiple activites could be added -->
-<ul ng-if="destination.type === flights">
-
+<ul>
+  <li  ng-if="destination.type === 'flight'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} Flight to {{destination.location}}: {{destination.price | currency}}
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
 </ul>
 
 <h3>Hotels</h3>
 
+<ul>
+  <li  ng-if="destination.type === 'hotel'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
+</ul>
+
 <h3>Activites</h3>
+
+<ul>
+  <li  ng-if="destination.type === 'activity'"
+  ng-repeat="destination in trip.listOfDestinations"
+  >
+  {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
+  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  </li>
+</ul>
 
 <!-- extra: a button to refresh the search. Wipes out previous
 search results and hides the catigorys -->
 </span>
+
+
 </div>
+
+<!-- Users trip shopping cart -->
+<div >
+  <h2>Trip shopping cart</h2>
+
+</div>
+
+
+
+
+
+
+
+<!--  -->
