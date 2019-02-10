@@ -13,6 +13,7 @@
 
     <div ng-controller="AuthController as auth">
       <!-- Sign Up Form -->
+      <span ng-if="!auth.userInfo">
       <h2>Sign Up</h2>
       <form ng-submit="auth.createUser()">
         <input type="text" ng-model="auth.username" placeholder="Username">
@@ -26,6 +27,9 @@
         <input type="password" ng-model="auth.passwordLogIn" placeholder="Password">
         <input type="submit" value="Log In">
       </form>
+      </span>
+
+      <button ng-if="auth.userInfo" ng-click="auth.logOut()">Log Out</button>
     </div>
   </body>
 </html>
