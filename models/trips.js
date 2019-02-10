@@ -344,4 +344,73 @@ module.exports = [
    img:'../public/images/activity/spice.jpeg',
    dates:[]
  },
+ {
+  type:'hotel',
+  price:500,
+  title:'Norman Tel Aviv',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/hotel/norman.jpeg',
+  dates:[]
+},
+{
+  type:'hotel',
+  price:350,
+  title:'Hilton Tel Aviv',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/hotel/norman.jpeg',
+  dates:[]
+},
+{
+  type:'hotel',
+  price:350,
+  title:'Carlton Tel Avin',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/hotel/carlton.jpeg',
+  dates:[]
+},
+{
+  type:'flight',
+  price:500,
+  title:'El Al',
+  location:'Tel Aviv, Israel',
+  dates:[]
+},
+{
+  type:'flight',
+  price:1000,
+  title:'Delta',
+  location:'Tel Aviv, Israel',
+  dates:[]
+},
+{
+  type:'flight',
+  price:750,
+  title:'United Airlines',
+  location:'Tel Aviv, Israel',
+  dates:[]
+},
+{
+  type:'activity',
+  price:0,
+  title:'Dog Beach',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/activity/dogbeach.jpeg',
+  dates:[]
+},
+{
+  type:'activity',
+  price:2.5,
+  title:'Coffee on Rothschild Boulevard',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/activity/rothschild.jpeg',
+  dates:[]
+},
+{
+  type:'activity',
+  price:0,
+  title:'Visit the Markets Tel Aviv has to offer!',
+  location:'Tel Aviv, Israel',
+  img:'../public/images/activity/market.jpeg',
+  dates:[]
+},
 ]
