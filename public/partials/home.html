@@ -62,7 +62,10 @@ search results and hides the catigorys -->
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
-
+  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
 </div>
 
 
