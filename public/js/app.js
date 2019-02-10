@@ -12,6 +12,8 @@ app.controller('TripController', ['$http', function($http){
 // ================================== //
 app.controller('AuthController', ['$http', function($http){
 
+  const authCtrl = this;
+
   // ================================== //
   //          CREATE USER               //
   // ================================== //
@@ -43,9 +45,55 @@ app.controller('AuthController', ['$http', function($http){
       }
     }).then(function(response){
       console.log(response);
+
+      authCtrl.getUserInfo()
+
     }, function(error){
       console.log(error);
     });
   }
 
+  // ================================== //
+  //           Retrive User Info        //
+  // ================================== //
+
+  this.getUserInfo = function () {
+    $http({
+      method:'GET',
+      url:'/sessions'
+    }).then(function (res) {
+      authCtrl.userInfo = res.data
+    },function (err) {
+      console.log(err);
+    })
+  }
+
+  // ================================== //
+  //           LOG OUT USER              //
+  // ================================== //
+  this.logOut = function () {
+    $http({
+      method:'DELETE',
+      url:'/sessions'
+    }).then(function (res) {
+      console.log(res);
+      authCtrl.userInfo = false
+    },function (err) {
+      console.log(err);
+    })
+  }
+
 }]); // this closes the controller
+
+
+
+
+
+
+
+
+
+
+
+
+//
