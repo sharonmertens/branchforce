@@ -14,4 +14,29 @@ router.post('/', (req, res) => {
   });
 });
 
+router.put('/:id',(req,res) => {
+  const newTrip = {}
+  User.findByIdAndUpdate(req.params.id, {$push:{trips:newTrip}}, {new:true},
+  (err,data) => {
+    if(err)console.log(err);
+    res.status(202).json({
+      status:202,
+      message:"user information updated"
+    })
+  })
+})
+
+
+// Sending avaliable trip info back to the user
+const avaliableTrips = require('../models/trips.js');
+router.get('/trips/:location',(req,res) => {
+  res.json(avaliableTrips.filter((trip) => {
+    return trip.location === req.params.location
+  }))
+})
+
+
+
+
+
 module.exports = router;

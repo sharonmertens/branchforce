@@ -4,13 +4,51 @@ const app = angular.module('TripApp', []);
 //      TRIP CONTROLLER      //
 // ========================= //
 app.controller('TripController', ['$http', function($http){
-  this.foo = "bar"
+  const tripCtrl = this;
+  this.includePath = "partials/home.html"
+
+  this.changeInclude = function (path) {
+    tripCtrl.includePath = 'partials/'+path+'.html'
+  }
+
+  // user is searching for flights and Hotels
+  this.populatePage = function () {
+    $http({
+      method:'GET',
+      url:'/users/trips/' + this.location
+    }).then(function (res) {
+      tripCtrl.listOfDestinations = res.data
+      console.log(res.data);
+    },function (err) {
+      console.log(err);
+    })
+  }
+
+  // user stores their trip data
+  this.bookmarkedTrip = []
+
+  this.storeData = function (trip) {
+    let found = false
+    for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
+      if(tripCtrl.bookmarkedTrip[i].type === trip.type){
+        found = true
+        tripCtrl.bookmarkedTrip[i] = trip;
+      }
+    }
+    if(found === false){
+      tripCtrl.bookmarkedTrip.push(trip)
+    }
+    console.log(tripCtrl.bookmarkedTrip);
+  }
+
 }])
 
 // ================================== //
 //      AUTHORIZATION CONTROLLER      //
 // ================================== //
 app.controller('AuthController', ['$http', function($http){
+
+  const authCtrl = this;
 
   // ================================== //
   //          CREATE USER               //
@@ -29,8 +67,7 @@ app.controller('AuthController', ['$http', function($http){
     }, function () {
       console.log('error');
     })
-  };
-
+}
   // ================================== //
   //           LOG IN USER              //
   // ================================== //
@@ -44,9 +81,55 @@ app.controller('AuthController', ['$http', function($http){
       }
     }).then(function(response){
       console.log(response);
+
+      authCtrl.getUserInfo()
+
     }, function(error){
       console.log(error);
     });
   }
 
+  // ================================== //
+  //           Retrive User Info        //
+  // ================================== //
+
+  this.getUserInfo = function () {
+    $http({
+      method:'GET',
+      url:'/sessions'
+    }).then(function (res) {
+      authCtrl.userInfo = res.data
+    },function (err) {
+      console.log(err);
+    })
+  }
+
+  // ================================== //
+  //           LOG OUT USER              //
+  // ================================== //
+  this.logOut = function () {
+    $http({
+      method:'DELETE',
+      url:'/sessions'
+    }).then(function (res) {
+      console.log(res);
+      authCtrl.userInfo = false
+    },function (err) {
+      console.log(err);
+    })
+  }
+
 }]); // this closes the controller
+
+
+
+
+
+
+
+
+
+
+
+
+//
