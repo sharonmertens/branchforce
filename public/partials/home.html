@@ -11,16 +11,19 @@ takes a span of days -->
 but comes back hidden and the trip catigories wich were
 previously hidden gets revelead  -->
 
-<span ng-if="trip.listOfTrips">
+<span ng-if="trip.listOfDestinations" ng-repeat="destination in trip.listOfDestinations">
 <!-- These where hidden but after form is submitted gets revealed
 When one of these are clicked the hidden search information
 that was retrived from before gets displayed  -->
 <h3>Flights</h3>
+
 <!-- The information here is dynamic depending on the
 search paramiters. You can click a button on them to save to
 the user cart. Only one flight and hotel can be saved
 to the cart but multiple activites could be added -->
+<ul ng-if="destination.type === flights">
 
+</ul>
 
 <h3>Hotels</h3>
 

@@ -17,7 +17,7 @@ app.controller('TripController', ['$http', function($http){
       method:'GET',
       url:'/users/trips/' + this.location
     }).then(function (res) {
-      tripCtrl.listOfTrips = res.data
+      tripCtrl.listOfDestinations = res.data
       console.log(res.data);
     },function (err) {
       console.log(err);
