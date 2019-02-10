@@ -14,4 +14,16 @@ router.post('/', (req, res) => {
   });
 });
 
+router.put('/:id',(req,res) => {
+  const newTrip = {}
+  User.findByIdAndUpdate(req.params.id, {$push:{trips:newTrip}}, {new:true},
+  (err,data) => {
+    if(err)console.log(err);
+    res.status(202).json({
+      status:202,
+      message:"user information updated"
+    })
+  })
+})
+
 module.exports = router;
