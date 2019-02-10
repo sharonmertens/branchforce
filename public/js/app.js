@@ -4,7 +4,12 @@ const app = angular.module('TripApp', []);
 //      TRIP CONTROLLER      //
 // ========================= //
 app.controller('TripController', ['$http', function($http){
-  this.foo = "bar"
+  const tripCtrl = this;
+  this.includePath = "partials/home.html"
+
+  this.changeInclude = function (path) {
+    tripCtrl.includePath = 'partials/'+path+'.html'
+  }
 }])
 
 // ================================== //
@@ -31,8 +36,7 @@ app.controller('AuthController', ['$http', function($http){
     }, function () {
       console.log('error');
     })
-  };
-
+}
   // ================================== //
   //           LOG IN USER              //
   // ================================== //

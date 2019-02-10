@@ -1,0 +1,35 @@
+<h1>Home</h1>
+<div>
+  <!-- 2 search inputs . One takes a loacation the other
+takes a span of days -->
+<form ng-submit="trip.populatePage()">
+  <input type="text" placeholder="destination" ng-model="trip.location">
+  <input type="submit" value="Search">
+</form>
+
+<!-- When submitted the inforamtion gets returned on the page
+but comes back hidden and the trip catigories wich were
+previously hidden gets revelead  -->
+
+<span ng-if="trip.listOfDestinations" ng-repeat="destination in trip.listOfDestinations">
+<!-- These where hidden but after form is submitted gets revealed
+When one of these are clicked the hidden search information
+that was retrived from before gets displayed  -->
+<h3>Flights</h3>
+
+<!-- The information here is dynamic depending on the
+search paramiters. You can click a button on them to save to
+the user cart. Only one flight and hotel can be saved
+to the cart but multiple activites could be added -->
+<ul ng-if="destination.type === flights">
+
+</ul>
+
+<h3>Hotels</h3>
+
+<h3>Activites</h3>
+
+<!-- extra: a button to refresh the search. Wipes out previous
+search results and hides the catigorys -->
+</span>
+</div>
