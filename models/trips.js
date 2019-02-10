@@ -3,7 +3,7 @@ module.exports = [
     type:'hotel',
     price:216,
     title:'The Montague on The Gardens',
-    location:'London',
+    location:'London, England',
     img:'../public/images/hotel/montague.png',
     dates:[]
   },
@@ -11,7 +11,7 @@ module.exports = [
     type:'hotel',
     price:264,
     title:'The Chesterfield Mayfair',
-    location:'London',
+    location:'London, England',
     img:'../public/images/hotel/chesterfield.png',
     dates:[]
   },
@@ -19,7 +19,7 @@ module.exports = [
     type:'hotel',
     price:85,
     title:'Park Grand London Hyde Park',
-    location:'London',
+    location:'London, England',
     img:'../public/images/hotel/parkgrand.png',
     dates:[]
   },
@@ -27,28 +27,28 @@ module.exports = [
     type:'flight',
     price:300,
     title:'Jet Blue',
-    location:'London',
+    location:'London, England',
     dates:[]
   },
   {
     type:'flight',
     price:250,
     title:'British Airways',
-    location:'London',
+    location:'London, England',
     dates:[]
   },
   {
     type:'flight',
     price:500,
     title:'Virgin Atlantic',
-    location:'London',
+    location:'London, England',
     dates:[]
   },
   {
     type:'activity',
     price:20,
     title:'Big Ben',
-    location:'London',
+    location:'London, England',
     img:'../public/images/activity/bigben.jpeg',
     dates:[]
   },
@@ -56,7 +56,7 @@ module.exports = [
     type:'activity',
     price:20,
     title:'Buckingham Palace',
-    location:'London',
+    location:'London, England',
     img:'../public/images/activity/buckingham.jpeg',
     dates:[]
   },
@@ -64,7 +64,7 @@ module.exports = [
     type:'activity',
     price:80,
     title:'Cocktail Making Masterclass',
-    location:'London',
+    location:'London, England',
     img:'../public/images/activity/cocktails.jpeg',
     dates:[]
   },
@@ -72,7 +72,7 @@ module.exports = [
     type:'hotel',
     price:279,
     title:'Prince Waikiki',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/prince.png',
     dates:[]
   },
@@ -80,7 +80,7 @@ module.exports = [
     type:'hotel',
     price:1700,
     title:'Four Seasons Resort Lanai',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/fourseasons.png',
     dates:[]
   },
@@ -88,7 +88,7 @@ module.exports = [
     type:'hotel',
     price:483,
     title:'Fairmont Kea Lani',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/fairmont.png',
     dates:[]
   },
@@ -96,28 +96,28 @@ module.exports = [
     type:'flight',
     price:200,
     title:'United Airlines',
-    location:'Hawaii',
+    location:'HHawaii, USA',
     dates:[]
   },
   {
     type:'flight',
     price:250,
     title:'Delta',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     dates:[]
   },
   {
     type:'flight',
     price:350,
     title:'American Airlines',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     dates:[]
   },
   {
     type:'activity',
     price:135,
     title:'Molokini and Turtle Arches Snorkeling Trip',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/activity/snorkeling.png',
     dates:[]
   },
@@ -125,7 +125,7 @@ module.exports = [
     type:'activity',
     price:200,
     title:'Na Pali Experience',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/activity/napali.png',
     dates:[]
   },
@@ -133,7 +133,7 @@ module.exports = [
     type:'activity',
     price:80,
     title:'Zipline',
-    location:'Hawaii',
+    location:'Hawaii, USA',
     img:'../public/images/activity/zipline.png',
     dates:[]
   },
@@ -141,7 +141,7 @@ module.exports = [
     type:'hotel',
     price:166,
     title:'The Royal Park Hotel Tokyo Shiodome',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/hotel/royalpark.png',
     dates:[]
   },
@@ -149,7 +149,7 @@ module.exports = [
     type:'hotel',
     price:74,
     title:'Dai-Ichi Hotel Ryogoku',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/hotel/dai.png',
     dates:[]
   },
@@ -157,7 +157,7 @@ module.exports = [
     type:'hotel',
     price:109,
     title:'Shinjuku Granbell Hotel',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/hotel/shinjuku.png',
     dates:[]
   },
@@ -165,28 +165,28 @@ module.exports = [
     type:'flight',
     price:867,
     title:'United Airlines',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     dates:[]
   },
   {
     type:'flight',
     price:426,
     title:'Japan Airlines',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     dates:[]
   },
   {
     type:'flight',
     price:500,
     title:'American Airlines',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     dates:[]
   },
   {
     type:'activity',
     price:30,
     title:'Tokyo Skytree',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/activity/skytree.jpeg',
     dates:[]
   },
@@ -194,7 +194,7 @@ module.exports = [
     type:'activity',
     price:18,
     title:'Meiji Jingu',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/activity/skytree.jpeg',
     dates:[]
   },
@@ -202,8 +202,146 @@ module.exports = [
     type:'activity',
     price:200,
     title:'Odaiba Entertainment Island',
-    location:'Tokyo',
+    location:'Tokyo, Japan',
     img:'../public/images/activity/odaiba.jpeg',
     dates:[]
   },
+  {
+   type:'hotel',
+   price:798,
+   title:'Shangri-La Paris',
+   location:'Paris, France',
+   img:'../public/images/hotel/shangri-la-paris-2-large.jpg',
+   dates:[]
+ },
+ {
+   type:'hotel',
+   price:350,
+   title:'Hotel Bienvenue',
+   location:'Paris, France',
+   img:'../public/images/hotel/hotelbienvenue.jphoteg',
+   dates:[]
+ },
+ {
+   type:'hotel',
+   price:550,
+   title:'Hotel Plaza Athenee',
+   location:'Paris, France',
+   img:'../public/images/hotel/hotelplazaathens.jpg',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:644,
+   title:'Lufthansa',
+   location:'Paris, France',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:534,
+   title:'Air France',
+   location:'Paris, France',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:846,
+   title:'United Airlines',
+   location:'Paris, France',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:15,
+   title:'Eiffel Tower',
+   location:'Paris, France',
+   img:'../public/images/activity/eiffeltower.jpeg',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:50,
+   title:'Louvre Museum',
+   location:'Paris, France',
+   img:'../public/images/activity/louvre.jpeg',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:25,
+   title:'Arc de Triomphe',
+   location:'Paris, France',
+   img:'../public/images/activity/arc.jpeg',
+   dates:[]
+ },
+ {
+   type:'hotel',
+   price:1130,
+   title:'Bulgari Resort Dubai',
+   location:'Dubai, UAE',
+   img:'../public/images/hotel/bulgari.jpeg',
+   dates:[]
+ },
+ {
+   type:'hotel',
+   price:300,
+   title:'Atlantis, the Palm',
+   location:'Dubai, UAE',
+   img:'../public/images/hotel/atlantis.jpeg',
+   dates:[]
+ },
+ {
+   type:'hotel',
+   price:450,
+   title:'XVA Art Hotel',
+   location:'Dubai, UAE',
+   img:'../public/images/hotel/xva.jpeg',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:881,
+   title:'Virgin Atlantic',
+   location:'Dubai, UAE',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:895,
+   title:'Emirates',
+   location:'Dubai, UAE',
+   dates:[]
+ },
+ {
+   type:'flight',
+   price:1271,
+   title:'Jet Blue',
+   location:'Dubai, UAE',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:25,
+   title:'The Dubai Fountain',
+   location:'Dubai, UAE',
+   img:'../public/images/activity/dubaifountain.jpeg',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:35,
+   title:'Palm Jumeirah Island',
+   location:'Dubai, UAE',
+   img:'../public/images/activity/palm.jpeg',
+   dates:[]
+ },
+ {
+   type:'activity',
+   price:20,
+   title:'Dubai Spice Souk',
+   location:'Dubai, UAE',
+   img:'../public/images/activity/spice.jpeg',
+   dates:[]
+ },
 ]
