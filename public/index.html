@@ -29,7 +29,9 @@
       </form>
       </span>
 
-      <button ng-if="auth.userInfo" ng-click="auth.logOut()">Log Out</button>
+      <span ng-if="auth.userInfo">
+      <button ng-click="auth.logOut()">Log Out</button>
+      </span>
     </div>
   </body>
 </html>
