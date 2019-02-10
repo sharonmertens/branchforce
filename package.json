@@ -1,6 +1,9 @@
 {
   "name": "branchforce",
   "version": "1.0.0",
+  "engines": {
+    "node": "v11.4.0"
+  },
   "description": "MEAN Stack Group Project",
   "main": "server.js",
   "scripts": {
