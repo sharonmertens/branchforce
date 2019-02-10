@@ -5,10 +5,10 @@ const app = angular.module('TripApp', []);
 // ========================= //
 app.controller('TripController', ['$http', function($http){
   const tripCtrl = this;
-  this.includePath = ""
+  this.includePath = "partials/home.html"
 
   this.changeInclude = function (path) {
-    tripCtrl.includePath = './partials/'+path+'.html'
+    tripCtrl.includePath = 'partials/'+path+'.html'
   }
 }])
 
