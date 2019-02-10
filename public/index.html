@@ -31,7 +31,9 @@
 
       <span ng-if="auth.userInfo">
       <button ng-click="auth.logOut()">Log Out</button>
-      </span>
+      <a href="" ng-click="trip.changeInclude(my-trips)">My Trips</a>
+      <div ng-include="'partials/my-trips.html'"></div>
+    </span>
     </div>
   </body>
 </html>
