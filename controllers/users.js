@@ -59,7 +59,7 @@ router.put('/:id',(req,res) => {
       newTrip.hotel.hotelLocation = req.body[i].location
     }
     if(req.body[i].type === 'activity'){
-      obj.activitieName = req.body[i].title
+      obj.activitiesName = req.body[i].title
       obj.activitiesPrice = req.body[i].price
       newTrip.activities.push(obj)
     }
