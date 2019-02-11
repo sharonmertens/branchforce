@@ -1,4 +1,8 @@
-<div ng-controller="TripController as trip">
-  <h1>My Trips</h1>
+  <h1>MY Trips</h1>
 
-</div>
+  <div ng-repeat="vaykay in auth.userInfo.trips">
+    <h2>Trip {{vaykay.overallPrice}}</h2>
+  </div>
+
+
+ <!-- ng-init="trNum = auth.tripNumber++" -->

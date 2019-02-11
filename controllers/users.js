@@ -21,7 +21,34 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id',(req,res) => {
-  const newTrip = {}
+  // formating the data
+  const newTrip = {};
+  newTrip.hotel = {};
+  newTrip.flight = {};
+  newTrip.activites = [];
+  const obj = {}
+  let sum = 0;
+  for (let i = 0; i < req.body.length; i++) {
+    sum = req.body[i].price + sum
+    if(req.body[i].type === 'flight'){
+      newTrip.flight.airline = req.body[i].title
+      newTrip.flight.flighPrice = req.body[i].price
+      newTrip.flight.destination = req.body[i].location
+    }
+    if(req.body[i].type === 'hotel'){
+      newTrip.hotel.hotelName = req.body[i].title
+      newTrip.hotel.hotelPrice = req.body[i].price
+      newTrip.hotel.hotelLocation = req.body[i].location
+    }
+    if(req.body[i].type === 'activity'){
+      obj.activitieName = req.body[i].title
+      obj.activitiePrice = req.body[i].price
+      newTrip.activites.push(obj)
+    }
+  }
+
+  newTrip.overallPrice = sum
+
   User.findByIdAndUpdate(req.params.id, {$push:{trips:newTrip}}, {new:true},
   (err,data) => {
     if(err)console.log(err);
