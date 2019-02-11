@@ -48,7 +48,7 @@ to the cart but multiple activites could be added -->
   ng-repeat="destination in trip.listOfDestinations"
   >
   {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
-  <button type="button" ng-click="trip.storeData(destination)">Save</button>
+  <button type="button" ng-click="trip.addEvent(destination)">Save</button>
   </li>
 </ul>
 
@@ -62,12 +62,15 @@ search results and hides the catigorys -->
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
-  <p>Flight:
+  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Activites: <ul>
     <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span>
-  </p>
-  <p>Hotel:
-    <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span>
-  </p>
+      ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
+  </ul> </p>
+
+  <h5>Trip Total: {{trip.total()}}</h5>
+  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
 </div>

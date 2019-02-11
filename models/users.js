@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
     },
+<<<<<<< HEAD
   budget: Number,
   trips: [{
     overallPrice: Number,
