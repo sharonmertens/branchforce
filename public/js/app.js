@@ -27,6 +27,7 @@ app.controller('TripController', ['$http', function($http){
   // user stores their trip data
   this.bookmarkedTrip = []
 
+  // only adds one flight and hotel
   this.storeData = function (trip) {
     let found = false
     for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
@@ -39,6 +40,28 @@ app.controller('TripController', ['$http', function($http){
       tripCtrl.bookmarkedTrip.push(trip)
     }
     console.log(tripCtrl.bookmarkedTrip);
+  }
+
+  // adds events
+  this.addEvent = function (event) {
+    let found = false
+    for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
+      if(tripCtrl.bookmarkedTrip[i].title === event.title){
+        found = true
+      }
+    }
+    if(found === false){
+      tripCtrl.bookmarkedTrip.push(event)
+    }
+  }
+
+  // adds the total trip cost
+  this.total = function () {
+    let sum = 0;
+    for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
+      sum = tripCtrl.bookmarkedTrip[i].price + sum
+    }
+    return sum
   }
 
 }])
