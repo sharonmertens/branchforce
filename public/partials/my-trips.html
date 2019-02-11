@@ -1,7 +1,21 @@
   <h1>MY Trips</h1>
 
   <div ng-repeat="vaykay in auth.userInfo.trips">
-    <h2>Trip {{vaykay.overallPrice}}</h2>
+    <h2>{{vaykay.hotel.hotelLocation}} Trip:</h2>
+    <table>
+      <tr>
+        <td>{{vaykay.hotel.hotelName}}</td>
+        <td>{{vayakay.hotel.hotelPrice}}</td>
+        <td>{{vayakay.hotel.hotelLocation}}</td>
+      </tr>
+      <tr>
+        <td>{{vaykay.flight.airline}}</td>
+      </tr>
+      <tr ng-repeat="activities in vaykay.activities">
+        <td>{{activities.activitiesName}}</td>
+      </tr>
+
+    </table>
   </div>
 
 
