@@ -23,12 +23,14 @@ const userSchema = mongoose.Schema({
       flightPrice: Number,
       startLocation: String,
       destination: String,
-      departureDay: Date
+      departureDay: Date,
+      returnDay: Date
     },
     activities: [{
-      activitieNama: String,
-      activitieTime: Number,
-      activitieDate: Date
+      activitiesName: String,
+      activitiesTime: Number,
+      activitiesDate: Date,
+      activitiesPrice: Number
     }]
   }]
 })
