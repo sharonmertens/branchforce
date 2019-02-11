@@ -1,9 +1,15 @@
+// ================ //
+//   DEPENDENCIES   //
+// ================ //
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
-// ROUTE TO DELETE SESSION
+// ========== //
+//   ROUTES   //
+// ========== //
+// DELETE SESSION
 router.delete('/', (req, res) => {
   req.session.destroy(() => {
     res.status(200).json({
@@ -13,7 +19,7 @@ router.delete('/', (req, res) => {
   });
 });
 
-// ROUTE TO NEW SESSION
+//NEW SESSION
 router.post('/', (req, res) => {
   console.log(req.body);
   User.findOne({username:req.body.username}, (err, foundUser) => {
@@ -32,7 +38,7 @@ router.post('/', (req, res) => {
   });
 });
 
-// Sending over the user's data
+//SENDING OVER USER DATA
 router.get('/',(req,res) => {
   if(req.session.currentUser){
     res.json(req.session.currentUser)

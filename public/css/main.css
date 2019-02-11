@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+
 body {
 
 }
 
+div {
+  border:1px solid black;
+}
+
 h1 {
-  font-size: 24px;
+  font-family: 'Caveat', cursive;
+  font-size: 54px;
   text-align: center;
 }
 
 
+<<<<<<< HEAD
 /* ======== SLIDESHOW SECTION ========== */
 .slideshow-container {
   width: 70%;
@@ -24,3 +32,39 @@ h1 {
 .slideshow-images img:first-of-type {
   display: block;
 }
+=======
+/*********************/
+/*  SIGN IN/UP PAGE  */
+/*********************/
+/* .controller-container {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  background: silver;
+}
+.sign-up-container h2:first-child {
+  margin-top: 0;
+}
+.sign-up-container span {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.sign-up-container input {
+  height: 20px;
+  border-radius: 1em;
+  border: 2px solid white;
+}
+.sign-up-container input[type=submit] {
+
+}
+.sign-up-container input[type=submit]:hover {
+  background: teal;
+  color: white;
+} */
+>>>>>>> 1fbb10d8c8560b8871c8be1373453fa6326f95fe

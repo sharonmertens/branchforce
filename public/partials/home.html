@@ -33,7 +33,7 @@ to the cart but multiple activites could be added -->
 <h3>Hotels</h3>
 
 <ul>
-  <li  ng-if="destination.type === 'hotel'"
+  <li ng-if="destination.type === 'hotel'"
   ng-repeat="destination in trip.listOfDestinations"
   >
   {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
@@ -78,7 +78,6 @@ search results and hides the catigorys -->
 
 
 
-
-
-
-<!--  -->
+  <h5>Trip Total: {{trip.total()}}</h5>
+  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
+</div>
