@@ -5,11 +5,7 @@
     <title>Travel App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
     <script src="./js/app.js"></script>
-    <style media="screen">
-      div{
-        border:1px solid black;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/main.css">
   </head>
   <body ng-controller="TripController as trip">
     <h1>Traveleritis App</h1>
@@ -33,11 +29,13 @@
       </form>
       </span>
 
+      <!-- Display on page if user has logged in -->
       <span ng-if="auth.userInfo">
       <button ng-click="auth.logOut()">Log Out</button>
       <a href="" ng-click="trip.changeInclude('home')">Home</a>
       <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
       <a href="" ng-click="trip.changeInclude('about')">About</a>
+      <a href="#" ng-click="addFunds()">Add Funds</a>
       <div ng-include="trip.includePath"></div>
     </span>
     </div>

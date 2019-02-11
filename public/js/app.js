@@ -1,8 +1,8 @@
 const app = angular.module('TripApp', []);
 
-// ========================= //
-//      TRIP CONTROLLER      //
-// ========================= //
+// =================== //
+//   TRIP CONTROLLER   //
+// =================== //
 app.controller('TripController', ['$http', function($http){
   const tripCtrl = this;
   this.includePath = "partials/home.html"
@@ -11,7 +11,9 @@ app.controller('TripController', ['$http', function($http){
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
 
-  // user is searching for flights and Hotels
+  // ====================================== //
+  //   USER SEARCHES FOR TRIP/FLIGHT DATA   //
+  // ====================================== //
   this.populatePage = function () {
     $http({
       method:'GET',
@@ -24,7 +26,9 @@ app.controller('TripController', ['$http', function($http){
     })
   }
 
-  // user stores their trip data
+  // ========================= //
+  //   USER STORES TRIP DATA   //
+  // ========================= //
   this.bookmarkedTrip = []
 
   this.storeData = function (trip) {
@@ -41,18 +45,25 @@ app.controller('TripController', ['$http', function($http){
     console.log(tripCtrl.bookmarkedTrip);
   }
 
+
+  this.saveTripInfo = (trip) => {
+    console.log("Click works");
+    let tripSaved = true
+    let savedTripInfo = tripCtrl.bookmarkedTrip
+    
+  }
 }])
 
-// ================================== //
-//      AUTHORIZATION CONTROLLER      //
-// ================================== //
+// ============================ //
+//   AUTHORIZATION CONTROLLER   //
+// ============================ //
 app.controller('AuthController', ['$http', function($http){
 
   const authCtrl = this;
 
-  // ================================== //
-  //          CREATE USER               //
-  // ================================== //
+  // =============== //
+  //   CREATE USER   //
+  // =============== //
   this.createUser = function () {
     console.log("Create user click works");
     $http({
@@ -68,9 +79,9 @@ app.controller('AuthController', ['$http', function($http){
       console.log('error');
     })
 }
-  // ================================== //
-  //           LOG IN USER              //
-  // ================================== //
+  // =============== //
+  //   LOG IN USER   //
+  // =============== //
   this.logIn = function () {
     $http({
       method: 'POST',
@@ -89,9 +100,9 @@ app.controller('AuthController', ['$http', function($http){
     });
   }
 
-  // ================================== //
-  //           Retrive User Info        //
-  // ================================== //
+  // ====================== //
+  //   RETRIEVE USER INFO   //
+  // ====================== //
 
   this.getUserInfo = function () {
     $http({
@@ -104,9 +115,9 @@ app.controller('AuthController', ['$http', function($http){
     })
   }
 
-  // ================================== //
-  //           LOG OUT USER              //
-  // ================================== //
+  // ================ //
+  //   LOG OUT USER   //
+  // ================ //
   this.logOut = function () {
     $http({
       method:'DELETE',

@@ -66,6 +66,7 @@ search results and hides the catigorys -->
     ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
   <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
     ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
+  <button ng-click="trip.saveTripInfo()">Checkout Trip</button>
 </div>
 
 

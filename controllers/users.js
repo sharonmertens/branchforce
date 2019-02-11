@@ -1,8 +1,14 @@
+// ================ //
+//   DEPENDENCIES   //
+// ================ //
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
+// ========== //
+//   ROUTES   //
+// ========== //
 // create a User Router with a route to post a new user
 router.post('/', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
@@ -34,9 +40,5 @@ router.get('/trips/:location',(req,res) => {
     return trip.location === req.params.location
   }))
 })
-
-
-
-
 
 module.exports = router;

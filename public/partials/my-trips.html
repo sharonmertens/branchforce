@@ -1,3 +1,8 @@
-<div class="">
-  <h1>MY Trips</h1>
+<div ng-controller="TripController as trip">
+  <h1>My Trips</h1>
+
+  <h3>Funds Available:</h3>
+
+  <p ng-if="tripSaved" ng-repeat="plans in trip.savedTripInfo">Info: {{ plans.title }}</p>
+  <p>Test</p>
 </div>
