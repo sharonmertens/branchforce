@@ -90,6 +90,7 @@ app.controller('TripController', ['$http', function($http){
 app.controller('AuthController', ['$http', function($http){
 
   const authCtrl = this;
+  this.tripNumber = 0;
 
   // ================================== //
   //          CREATE USER               //
@@ -159,6 +160,7 @@ app.controller('AuthController', ['$http', function($http){
       console.log(err);
     })
   }
+
 
 }]); // this closes the controller
 
