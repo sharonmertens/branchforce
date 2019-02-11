@@ -18,6 +18,39 @@
     <div ng-controller="AuthController as auth">
       <!-- Sign Up Form -->
       <span ng-if="!auth.userInfo">
+        <!-- Authomatic Slideshow Container -->
+          <script>
+            var i = 0; // start point
+            var images = [];
+            var time = 3000;
+
+            //Image list
+            images[0] = '/images/slideshow/bali.jpeg';
+            images[1] = '/images/slideshow/dubai.jpeg';
+            images[2] = '/images/slideshow/hawaii.jpeg';
+            images[3] = '/images/slideshow/london.jpeg';
+            images[4] = '/images/slideshow/paris.jpeg';
+            images[5] = '/images/slideshow/telaviv.jpeg';
+            images[7] = '/images/slideshow/tokyo.jpeg';
+
+            // Change Image
+            function changeImg() {
+              document.slide.src = images[i];
+
+              if (i < images.length - 1) {
+                i++;
+              } else {
+                i = 0;
+              }
+
+              setTimeout('changeImg()', time);
+            }
+
+            // want this changeImg to run when we load page
+            window.onload = changeImg;
+          </script>
+          <img name="slide">
+        </div>
       <h2>Sign Up</h2>
       <form ng-submit="auth.createUser()">
         <input type="text" ng-model="auth.username" placeholder="Username">
