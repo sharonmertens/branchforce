@@ -13,7 +13,7 @@
     <div class="controller-container" ng-controller="AuthController as auth">
       <div class="sign-up-container">
       <!-- Sign Up Form -->
-<<<<<<< HEAD
+
       <span ng-if="!auth.userInfo">
         <!-- Authomatic Slideshow Container -->
           <script>
@@ -62,42 +62,18 @@
         <input type="submit" value="Log In">
       </form>
       </span>
-=======
-        <span ng-if="!auth.userInfo">
-          <h2>Sign Up</h2>
-          <form ng-submit="auth.createUser()">
-            <input type="text" ng-model="auth.username" placeholder="Username">
-            <input type="password" ng-model="auth.password" placeholder="Password">
-            <input type="submit" value="Sign Up">
-          </form>
-        <!-- Log In Form -->
-          <h2>Log In</h2>
-          <form ng-submit="auth.logIn()">
-            <input type="text" ng-model="auth.usernameLogIn" placeholder="Username">
-            <input type="password" ng-model="auth.passwordLogIn" placeholder="Password">
-            <input type="submit" value="Log In">
-          </form>
-        </span>
 
->>>>>>> 1fbb10d8c8560b8871c8be1373453fa6326f95fe
 
       <!-- Display on page if user has logged in -->
     </div>
       <span ng-if="auth.userInfo">
-<<<<<<< HEAD
+
       <button ng-click="auth.logOut()">Log Out</button>
       <a href="" ng-click="trip.changeInclude('home')">Home</a>
       <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
       <a href="" ng-click="trip.changeInclude('about')">About</a>
       <a href="" ng-click="trip.changeInclude('contact')">Contact Us</a>
-=======
-        <button ng-click="auth.logOut()">Log Out</button>
-          <a href="" ng-click="trip.changeInclude('home')">Home</a>
-          <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
-          <a href="" ng-click="trip.changeInclude('about')">About</a>
-          <!-- !!!Still needs functionality!!! -->
-          <a href="#" ng-click="addFunds()">Add Funds</a>
->>>>>>> 1fbb10d8c8560b8871c8be1373453fa6326f95fe
+
       <div ng-include="trip.includePath"></div>
       </span>
     </div>
