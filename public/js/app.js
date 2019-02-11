@@ -42,16 +42,9 @@ app.controller('TripController', ['$http', function($http){
     if(found === false){
       tripCtrl.bookmarkedTrip.push(trip)
     }
-    console.log(tripCtrl.bookmarkedTrip);
+    // console.log(tripCtrl.bookmarkedTrip);
   }
 
-
-  this.saveTripInfo = (trip) => {
-    console.log("Click works");
-    let tripSaved = true
-    let savedTripInfo = tripCtrl.bookmarkedTrip
-    
-  }
 }])
 
 // ============================ //
@@ -131,16 +124,3 @@ app.controller('AuthController', ['$http', function($http){
   }
 
 }]); // this closes the controller
-
-
-
-
-
-
-
-
-
-
-
-
-//

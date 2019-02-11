@@ -33,7 +33,7 @@ to the cart but multiple activites could be added -->
 <h3>Hotels</h3>
 
 <ul>
-  <li  ng-if="destination.type === 'hotel'"
+  <li ng-if="destination.type === 'hotel'"
   ng-repeat="destination in trip.listOfDestinations"
   >
   {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
@@ -62,17 +62,12 @@ search results and hides the catigorys -->
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
-  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
-  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
-  <button ng-click="trip.saveTripInfo()">Checkout Trip</button>
+  <p>Flight:
+    <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span>
+  </p>
+  <p>Hotel:
+    <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span>
+  </p>
 </div>
-
-
-
-
-
-
-
-<!--  -->
