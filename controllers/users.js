@@ -44,7 +44,7 @@ router.put('/:id',(req,res) => {
   newTrip.hotel = {};
   newTrip.flight = {};
   newTrip.activities = [];
-  const obj = {}
+
   let sum = 0;
   for (let i = 0; i < req.body.length; i++) {
     sum = req.body[i].price + sum
@@ -59,6 +59,7 @@ router.put('/:id',(req,res) => {
       newTrip.hotel.hotelLocation = req.body[i].location
     }
     if(req.body[i].type === 'activity'){
+      let obj = {}
       obj.activitiesName = req.body[i].title
       obj.activitiesPrice = req.body[i].price
       newTrip.activities.push(obj)
