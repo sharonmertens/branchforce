@@ -1,17 +1,15 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-  username:
-    {
-    type:String,
-    required:true
+  username: {
+    type: String,
+    required: true
     },
-  password:
-    {
-    type:String,
-    required:true
+  password: {
+    type: String,
+    required: true
     },
-  budget:Number,
+  budget: Number,
   trips: [{
     overallPrice: Number,
     hotel: {
@@ -34,6 +32,7 @@ const userSchema = mongoose.Schema({
       activitiesDate: Date,
       activitiesPrice: Number
     }]
+  }]
 })
 
 const User = mongoose.model('User', userSchema)
