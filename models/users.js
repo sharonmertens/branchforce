@@ -16,7 +16,7 @@ const userSchema = mongoose.Schema({
     overallPrice:Number,
     hotel:{hotelName:String, hotelPrice:Number, hotelLocation:String, hotelDates:[Date]},
     flight:{airline:String, flighPrice:Number, startLocation:String, destination:String, departureDay:Date},
-    activities:[{activitieNama:String, activitieTime:Number, activitieDate:Date}]
+    activities:[{activitieName:String, activitieTime:Number, activitieDate:Date, activitiePrice:Number}]
   }]
 })
 

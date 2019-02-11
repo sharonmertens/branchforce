@@ -64,6 +64,24 @@ app.controller('TripController', ['$http', function($http){
     return sum
   }
 
+  // Add a trip to the user's Trips
+  this.addTripToUser = function (id) {
+    $http({
+      method:'PUT',
+      url:'/users/' + id,
+      data: this.bookmarkedTrip
+    }).then(function (res) {
+
+      console.log(res);
+      tripCtrl.bookmarkedTrip = []
+      tripCtrl.location = 'a'
+      tripCtrl.populatePage()
+
+    },function (err) {
+      console.log(err);
+    })
+  }
+
 }])
 
 // ================================== //
