@@ -25,14 +25,14 @@ router.put('/:id',(req,res) => {
   const newTrip = {};
   newTrip.hotel = {};
   newTrip.flight = {};
-  newTrip.activites = [];
+  newTrip.activities = [];
   const obj = {}
   let sum = 0;
   for (let i = 0; i < req.body.length; i++) {
     sum = req.body[i].price + sum
     if(req.body[i].type === 'flight'){
       newTrip.flight.airline = req.body[i].title
-      newTrip.flight.flighPrice = req.body[i].price
+      newTrip.flight.flightPrice = req.body[i].price
       newTrip.flight.destination = req.body[i].location
     }
     if(req.body[i].type === 'hotel'){
@@ -42,8 +42,8 @@ router.put('/:id',(req,res) => {
     }
     if(req.body[i].type === 'activity'){
       obj.activitieName = req.body[i].title
-      obj.activitiePrice = req.body[i].price
-      newTrip.activites.push(obj)
+      obj.activitiesPrice = req.body[i].price
+      newTrip.activities.push(obj)
     }
   }
 
