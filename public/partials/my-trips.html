@@ -2,6 +2,7 @@
 
   <div ng-repeat="vaykay in auth.userInfo.trips">
     <h2>Trip {{vaykay.overallPrice}}</h2>
+    <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Remove Trip</button>
   </div>
 
 
