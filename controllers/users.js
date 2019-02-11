@@ -23,14 +23,14 @@ router.post('/', (req, res) => {
 // Removing a trip from the user
 router.put('/remove/:id',(req,res) => {
   console.log(req.body._id);
-  // User.findByIdAndUpdate(req.params.id, {$pull:{trips:req.body._id}},
-  // {new:true},(err,data) => {
-  //   if(err){console.log(err);}
-  //   res.status(202).json({
-  //     status:202,
-  //     message: "Trip successfully removed"
-  //   })
-  // })
+  User.findByIdAndUpdate(req.params.id, {$pull:{trips:{_id:req.body._id}}},
+  {new:true},(err,data) => {
+    if(err){console.log(err);}
+    res.status(202).json({
+      status:202,
+      message: "Trip successfully removed"
+    })
+  })
 })
 
 
