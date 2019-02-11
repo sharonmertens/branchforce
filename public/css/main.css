@@ -14,6 +14,16 @@ h1 {
   text-align: center;
 }
 
+/*********************/
+/*     MY TRIPS      */
+/*********************/
+table {
+  display: table;
+  border-collapse: seperate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
 
 /*********************/
 /*  SIGN IN/UP PAGE  */
