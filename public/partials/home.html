@@ -38,20 +38,11 @@ takes a span of days -->
   <input type="submit" value="Search">
 </form>
 
-<!-- When submitted the inforamtion gets returned on the page
-but comes back hidden and the trip catigories wich were
-previously hidden gets revelead  -->
+
 
 <span ng-if="trip.listOfDestinations">
-<!-- These where hidden but after form is submitted gets revealed
-When one of these are clicked the hidden search information
-that was retrived from before gets displayed  -->
-<h3>Flights</h3>
 
-<!-- The information here is dynamic depending on the
-search paramiters. You can click a button on them to save to
-the user cart. Only one flight and hotel can be saved
-to the cart but multiple activites could be added -->
+<h3>Flights</h3>
 <ul>
   <li  ng-if="destination.type === 'flight'"
   ng-repeat="destination in trip.listOfDestinations"
@@ -93,13 +84,25 @@ search results and hides the catigorys -->
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
-  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span><button type="button" name="button">X</button> </p>
-  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Flight:
+    <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}
+    <button type="button" ng-click="trip.reomveFromList(plans)">X</button>
+  </span>
+</p>
+
+  <p>Hotel:
+     <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}
+    <button type="button" ng-click="trip.reomveFromList(plans)">X</button>
+  </span>
+</p>
   <p>Activites: <ul>
     <span ng-repeat="plans in trip.bookmarkedTrip"
-      ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
+      ng-if="plans.type === 'activity'">
+      <li>{{plans.title}}/{{plans.location}}
+      <button type="button" ng-click="trip.reomveFromList(plans)">X</button> </li>
+    </span>
   </ul> </p>
 
 
