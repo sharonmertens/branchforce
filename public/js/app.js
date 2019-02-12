@@ -108,6 +108,10 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     return true
   }
 
+  this.deleteTripCart = () => {
+      this.bookmarkedTrip.splice(0)
+  }
+
 
   // Image Carousel / Slideshow
   //Image list
@@ -132,6 +136,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
       $timeout(tripCtrl.changeImg, 3000)
   }
   this.changeImg();
+
 
 }])
 

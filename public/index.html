@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./css/main.css">
   </head>
   <body ng-controller="TripController as trip">
-    <h1>Traveleritis</h1>
+    <div class="title-container">
+      <h1>Traveleritis</h1>
+    </div>
 
-    <div class="controller-container" ng-controller="AuthController as auth">
-      <div class="sign-up-container">
+      <div class="sign-up-container" ng-if="!auth.userInfo" ng-controller="AuthController as auth">
       <!-- Sign Up Form -->
 
       <span ng-if="!auth.userInfo">
@@ -35,20 +36,21 @@
         <input type="submit" value="Log In">
       </form>
       </span>
+    </div>
+
 
 
       <!-- Display on page if user has logged in -->
-    </div>
+    <div ng-if="auth.userInfo" class="home-page-container">
       <span ng-if="auth.userInfo">
-
-      <button ng-click="auth.logOut()">Log Out</button>
-      <a href="" ng-click="trip.changeInclude('home')">Home</a>
-      <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
-      <a href="" ng-click="trip.changeInclude('about')">About</a>
-      <a href="" ng-click="trip.changeInclude('contact')">Contact Us</a>
-
+        <button ng-click="auth.logOut()">Log Out</button>
+        <a href="" ng-click="trip.changeInclude('home')">Home</a>
+        <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
+        <a href="" ng-click="trip.changeInclude('about')">About</a>
+        <a href="" ng-click="trip.changeInclude('contact')">Contact Us</a>
       <div ng-include="trip.includePath"></div>
       </span>
     </div>
+
   </body>
 </html>

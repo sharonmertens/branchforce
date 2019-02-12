@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 
 body {
+  background: url('https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1473704712/z_Wyndham-Garden-at-Palmas-del-Mar.jpg?itok=MgKgRKy3') no-repeat center center fixed;
+  background-size: cover;
 
 }
 
@@ -49,6 +51,11 @@ table {
   resize: vertical; /* Allow user to vertically resize the text area, not horizontally */
 }
 
+/* ======== SLIDESHOW SECTION ========== */
+.slideshow-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
 /* Style the submit button with a sepcific background color etc... */
 input[type=submit] {
   background-color: blue;
@@ -57,6 +64,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
 }
 
 /* When moving the mouse over the submit button, change color to green */
@@ -78,12 +86,14 @@ input[type=submit]:hover {
   display: flex;
   justify-content: center;
   border: none;
-}
+} */
 .sign-up-container {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   padding: 100px;
-  background: silver;
+  width: 400px;
+  background: rgba(0,0,0,0.9);
 }
 .sign-up-container h2:first-child {
   margin-top: 0;
@@ -104,4 +114,13 @@ input[type=submit]:hover {
 .sign-up-container input[type=submit]:hover {
   background: teal;
   color: white;
+
+}
+
+.home-page-container {
+  width: 700px;
+  height: 700px;
+}
+
 } */
+
