@@ -80,6 +80,7 @@ app.controller('TripController', ['$http', function($http){
     },function (err) {
       console.log(err);
     })
+    return true
   }
 
 }])
@@ -90,7 +91,6 @@ app.controller('TripController', ['$http', function($http){
 app.controller('AuthController', ['$http', function($http){
 
   const authCtrl = this;
-  this.tripNumber = 0;
 
   // ================================== //
   //          CREATE USER               //
@@ -140,6 +140,7 @@ app.controller('AuthController', ['$http', function($http){
       method:'GET',
       url:'/sessions'
     }).then(function (res) {
+      console.log(res.data);
       authCtrl.userInfo = res.data
     },function (err) {
       console.log(err);
@@ -166,13 +167,14 @@ app.controller('AuthController', ['$http', function($http){
   // ================================== //
 
   this.removeTrip = function (trip , id) {
-    console.log(trip);
     $http({
       method:'PUT',
       url:'/users/remove/' + id,
       data: trip
     }).then(function (res) {
-      console.log(res);
+      console.log(res.data);
+      authCtrl.getUserInfo()
+
     },function (err) {
 
     })
