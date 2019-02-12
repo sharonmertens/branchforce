@@ -83,7 +83,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     return true
   }
 
-<<<<<<< HEAD
+
   // =============================== //
   //   ADD FUNDS AND CREATE BUDGET   //
   // =============================== //
@@ -106,7 +106,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     })
   }
 
-=======
+
   // Image Carousel / Slideshow
   //Image list
   this.images = [];
@@ -134,7 +134,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   this.logStuff = function (stuff) {
     console.log(stuff);
   }
->>>>>>> 2a50714445968a3fe901cd422d0f48cc70864d0f
+
 }])
 
 // ================================== //
