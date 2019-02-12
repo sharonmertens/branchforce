@@ -83,6 +83,28 @@ app.controller('TripController', ['$http', function($http){
     return true
   }
 
+  // =============================== //
+  //   ADD FUNDS AND CREATE BUDGET   //
+  // =============================== //
+  // this.budget = 0
+
+  this.addFunds = (id) => {
+
+    console.log(id);
+    $http({
+      method:'PUT',
+      url: '/users/budget/' + id,
+      data: {
+        budget: tripCtrl.budget
+      }
+    }).then(function(response){
+      console.log('Success');
+
+    }, function(error){
+      console.log(error);
+    })
+  }
+
 }])
 
 // ================================== //
@@ -128,6 +150,7 @@ app.controller('AuthController', ['$http', function($http){
 
     }, function(error){
       console.log(error);
+      alert('Username or Password Not Found!')
     });
   }
 

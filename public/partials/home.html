@@ -63,7 +63,7 @@ search results and hides the catigorys -->
 <div >
   <h2>Trip shopping cart</h2>
   <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span><button type="button" name="button">X</button> </p>
   <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
     ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
   <p>Activites: <ul>
