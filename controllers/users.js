@@ -20,13 +20,31 @@ router.post('/', (req, res) => {
   });
 });
 
+// Removing a trip from the user
+router.put('/remove/:id',(req,res) => {
+  console.log(req.body._id);
+  User.findByIdAndUpdate(req.params.id, {$pull:{trips:{_id:req.body._id}}},
+  {new:true},(err,data) => {
+    if(err){console.log(err);}
+    res.status(202).json({
+      status:202,
+      message: "Trip successfully removed"
+    })
+  })
+})
+
+
+
+
+// Adding a trip to the user
+
 router.put('/:id',(req,res) => {
   // formating the data
   const newTrip = {};
   newTrip.hotel = {};
   newTrip.flight = {};
   newTrip.activities = [];
-  const obj = {}
+
   let sum = 0;
   for (let i = 0; i < req.body.length; i++) {
     sum = req.body[i].price + sum
@@ -41,7 +59,8 @@ router.put('/:id',(req,res) => {
       newTrip.hotel.hotelLocation = req.body[i].location
     }
     if(req.body[i].type === 'activity'){
-      obj.activitieName = req.body[i].title
+      let obj = {}
+      obj.activitiesName = req.body[i].title
       obj.activitiesPrice = req.body[i].price
       newTrip.activities.push(obj)
     }

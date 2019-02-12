@@ -41,7 +41,9 @@ router.post('/', (req, res) => {
 //SENDING OVER USER DATA
 router.get('/',(req,res) => {
   if(req.session.currentUser){
-    res.json(req.session.currentUser)
+    User.findById(req.session.currentUser._id ,(err,data) => {
+      res.json(data)
+    })
   }else{
     res.status(401).json({
       message:'not logged in'
