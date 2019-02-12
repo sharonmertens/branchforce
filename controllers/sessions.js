@@ -22,7 +22,12 @@ router.delete('/', (req, res) => {
 //NEW SESSION
 router.post('/', (req, res) => {
   User.findOne({username:req.body.username}, (err, foundUser) => {
-  if(err){alert("Wrong Username/Password")}else{
+  if(err){
+    res.status(404).json({
+      status:404,
+      message:"Unothorized user"
+    })
+  }else{
     if(bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
       res.status(201).json({
