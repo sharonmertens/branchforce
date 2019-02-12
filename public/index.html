@@ -20,20 +20,12 @@
 >>>>>>> 956c83d6613066f241ec74880b9cb783231e2681
       <span ng-if="!auth.userInfo">
         <!-- Authomatic Slideshow Container -->
-          <script>
-            var i = 0; // start point
-            var images = [];
-            var time = 3000;
+        <div class="slideshow">
+          <img src="{{trip.imageSource}}" alt="">
+        </div>
 
-            //Image list
-            images[0] = '/images/slideshow/bali.jpeg';
-            images[1] = '/images/slideshow/dubai.jpeg';
-            images[2] = '/images/slideshow/hawaii.jpeg';
-            images[3] = '/images/slideshow/london.jpeg';
-            images[4] = '/images/slideshow/paris.jpeg';
-            images[5] = '/images/slideshow/telaviv.jpeg';
-            images[6] = '/images/slideshow/tokyo.jpeg';
 
+<<<<<<< HEAD
             // Change Image
             function changeImg() {
               document.slide.src = images[i];
@@ -52,6 +44,8 @@
           </script>
           <img name="slide">
 
+=======
+>>>>>>> 2a50714445968a3fe901cd422d0f48cc70864d0f
       <h2>Sign Up</h2>
       <form ng-submit="auth.createUser()">
         <input type="text" ng-model="auth.username" placeholder="Username">
