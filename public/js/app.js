@@ -200,6 +200,9 @@ app.controller('AuthController', ['$http', function($http){
       if(fund === "add"){
           res.data.budget += cost
       }
+      if(fund === "sub"){
+          res.data.budget -= cost
+      }
 
       authCtrl.userInfo = res.data
     },function (err) {

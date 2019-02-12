@@ -73,5 +73,5 @@ search results and hides the catigorys -->
   </ul> </p>
 
   <h5>Trip Total: {{trip.total()}}</h5>
-  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
+  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo('sub',trip.total())">Save This Trip</button>
 </div>
