@@ -20,6 +20,12 @@ router.post('/', (req, res) => {
   });
 });
 
+      router.put('/budget/:id', (req, res) => {
+        User.findByIdAndUpdate(req.params.id, {$set:{budget:req.body.budget}}, {new:true}, (error, data) => {
+          if(error)console.log(error);
+        })
+      })
+
 router.put('/:id',(req,res) => {
   // formating the data
   const newTrip = {};

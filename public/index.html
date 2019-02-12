@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Traveleritis</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <!-- <scrip src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <script src="./js/app.js"></script>
     <link rel="stylesheet" href="./css/main.css">
   </head>
@@ -37,8 +38,7 @@
           <a href="" ng-click="trip.changeInclude('home')">Home</a>
           <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
           <a href="" ng-click="trip.changeInclude('about')">About</a>
-          <!-- !!!Still needs functionality!!! -->
-          <a href="#" ng-click="addFunds()">Add Funds</a>
+
       <div ng-include="trip.includePath"></div>
       </span>
     </div>
