@@ -33,7 +33,11 @@ router.put('/remove/:id',(req,res) => {
   })
 })
 
-
+router.put('/budget/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {$set:{budget:req.body.budget}}, {new:true}, (error, data) => {
+    if(error)console.log(error);
+  })
+})
 
 
 // Adding a trip to the user
