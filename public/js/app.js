@@ -65,6 +65,14 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     return sum
   }
 
+  // removes from cart
+  this.reomveFromList = function (event) {
+    const index = this.bookmarkedTrip.findIndex(function (find) {
+      return find.title === event.title
+    })
+    tripCtrl.bookmarkedTrip.splice(index, 1)
+  }
+
   // Add a trip to the user's Trips
   this.addTripToUser = function (id) {
     $http({
