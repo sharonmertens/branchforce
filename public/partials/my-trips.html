@@ -13,28 +13,36 @@
     </div>
     <!-- <button ng-click="trip.addFunds(auth.userInfo._id)">Add Funds</button> -->
   <div ng-repeat="vaykay in auth.userInfo.trips">
-    <h2>{{vaykay.hotel.hotelLocation}} Trip:</h2>
+    <h2>{{trip.tripName}} Trip:</h2>
     <table>
       <tr>
         <th>Hotel</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
         <th>Price</th>
         <th>Location</th>
       </tr>
       <tr>
         <td>{{vaykay.hotel.hotelName}}</td>
-        <td>{{vaykay.hotel.hotelPrice}}</td>
+        <td>{{trip.hotelCheckin | date: 'MM/dd/yyyy'}}</td>
+        <td>{{trip.hotelCheckout | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.hotel.hotelPrice | currency}}</td>
         <td>{{vaykay.hotel.hotelLocation}}</td>
       </tr>
     </table>
 
     <table>
       <tr>
+        <th>Departure Date</th>
+        <th>Return Date</th>
         <th>Airline</th>
         <th>Price</th>
       </tr>
       <tr>
+        <td>{{trip.departureDate | date: 'MM/dd/yyyy'}}</td>
+        <td>{{trip.returnDate | date: 'MM/dd/yyyy'}}</td>
         <td>{{vaykay.flight.airline}}</td>
-        <td>{{vaykay.flight.flightPrice}}</td>
+        <td>{{vaykay.flight.flightPrice | currency}}</td>
       </tr>
     </table>
 
@@ -45,10 +53,10 @@
       </tr>
       <tr ng-repeat="activities in vaykay.activities">
         <td>{{activities.activitiesName}}</td>
-        <td>{{activities.activitiesPrice}}</td>
+        <td>{{activities.activitiesPrice | currency}}</td>
       </tr>
     </table>
-    <h2>Trip {{vaykay.overallPrice}}</h2>
+    <h2>Trip {{vaykay.overallPrice | currency}}</h2>
     <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Remove Trip</button>
   </div>
 
