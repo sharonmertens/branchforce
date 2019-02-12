@@ -33,10 +33,6 @@ takes a span of days -->
   <input ng-model="trip.hotelCheckout" type="date">
   <!-- <input type="text" placeholder="destination" ng-model="trip.location"> -->
   <br>
-  <!-- Give your trip a name -->
-  <label for="tripName">Trip Name:</label>
-  <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
-  <br>
   <!-- Save trip -->
   <input type="submit" value="Search">
 </form>
@@ -105,6 +101,11 @@ search results and hides the catigorys -->
       ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
   </ul> </p>
 
-  <h5>Trip Total: {{trip.total()}}</h5>
+  <h5>Trip Total: {{trip.total() | currency}}</h5>
+  <!-- Give your trip a name -->
+  <label for="tripName">Trip Name:</label>
+  <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
+  <br>
+  <!-- Save this trip -->
   <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
 </div>
