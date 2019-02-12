@@ -21,27 +21,6 @@
           <img src="{{trip.imageSource}}" alt="">
         </div>
 
-
-            <script>
-            // Change Image
-            function changeImg() {
-              document.slide.src = images[i];
-
-              if (i < images.length - 1) {
-                i++;
-              } else {
-                i = 0;
-              }
-
-              setTimeout('changeImg()', time);
-            }
-
-            // want this changeImg to run when we load page
-            window.onload = changeImg; // commented this out because i was getting an error constantly in console
-          </script>
-          <img name="slide">
-
-
       <h2>Sign Up</h2>
       <form ng-submit="auth.createUser()">
         <input type="text" ng-model="auth.username" placeholder="Username">

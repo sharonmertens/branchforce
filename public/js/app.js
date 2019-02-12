@@ -131,10 +131,6 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   }
   this.changeImg();
 
-  this.logStuff = function (stuff) {
-    console.log(stuff);
-  }
-
 }])
 
 // ================================== //
