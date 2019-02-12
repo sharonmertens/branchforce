@@ -1,11 +1,11 @@
   <h1>MY Trips</h1>
 
   <h2>Current Budget: </h2>
-    {{ trip.budget }}
+    {{auth.userInfo.budget | currency}}
     <button ng-model="openDiv" ng-click="openDiv = true" type="button" name="addFunds">Add Funds</button>
     <div id="target"></div>
     <div ng-if="openDiv" class="budget-container">
-      <form ng-submit="trip.addFunds(auth.userInfo._id)">
+      <form ng-submit="trip.addFunds(auth.userInfo._id) && auth.getUserInfo()">
         <label>How much money would you like to add?</label>
           <input type="number" ng-model="trip.budget" placeholder="Enter Number Here" min="1">
           <input type="submit" value="Submit"/>

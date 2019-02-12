@@ -104,6 +104,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     }, function(error){
       console.log(error);
     })
+    return true
   }
 
 
@@ -188,12 +189,18 @@ app.controller('AuthController', ['$http', function($http){
   //           Retrive User Info        //
   // ================================== //
 
-  this.getUserInfo = function () {
+  this.getUserInfo = function (fund,cost) {
     $http({
       method:'GET',
       url:'/sessions'
     }).then(function (res) {
       console.log(res.data);
+
+      // manipulate the funds first
+      if(fund === "add"){
+          res.data.budget += cost
+      }
+
       authCtrl.userInfo = res.data
     },function (err) {
       console.log(err);
@@ -226,7 +233,7 @@ app.controller('AuthController', ['$http', function($http){
       data: trip
     }).then(function (res) {
       console.log(res.data);
-      authCtrl.getUserInfo()
+      authCtrl.getUserInfo('add',trip.overallPrice)
 
     },function (err) {
 
