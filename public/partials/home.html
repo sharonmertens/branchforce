@@ -6,32 +6,38 @@ takes a span of days -->
   <!-- Drop down select menu for destination -->
   <label for="destination">Select Destination:</label>
   <select ng-model="trip.location" id="destination" name="destination">
-    <option value="london">London, England</option>
-    <option value="hawaii">Hawaii, USA</option>
-    <option value="tokyo">Tokyo, Japan</option>
-    <option value="paris">Paris, France</option>
-    <option value="dubai">Dubai, UAE</option>
-    <option value="telaviv">Tel Aviv, Israel</option>
+    <option value="London, England">London, England</option>
+    <option value="Hawaii, USA">Hawaii, USA</option>
+    <option value="Tokyo, Japan">Tokyo, Japan</option>
+    <option value="Paris, France">Paris, France</option>
+    <option value="Dubai, UAE">Dubai, UAE</option>
+    <option value="Tel Aviv, Israel">Tel Aviv, Israel</option>
   </select>
   <br>
   <!-- Flight Departure Date Selector -->
   <label for="flight">Select Flight:</label>
   <br>
   <label for="flightDeparture">Departure Date:</label>
-  <input type="date">
+  <input ng-model="trip.departureDate" type="date">
   <!-- Flight Return Date Selector -->
   <label for="flightReturn">Return Date:</label>
-  <input type="date">
+  <input ng-model="trip.returnDate" type="date">
   <br>
   <!-- Hotel Checkin Date Selector -->
   <label for="hotel">Select Hotel:</label>
   <br>
   <label for="checkin">Hotel Check-in:</label>
-  <input type="date">
+  <input ng-model="trip.hotelCheckin" type="date">
   <!-- Flight Return Date Selector -->
   <label for="checkout">Hotel Checkout:</label>
-  <input type="date">
+  <input ng-model="trip.hotelCheckout" type="date">
   <!-- <input type="text" placeholder="destination" ng-model="trip.location"> -->
+  <br>
+  <!-- Give your trip a name -->
+  <label for="tripName">Trip Name:</label>
+  <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
+  <br>
+  <!-- Save trip -->
   <input type="submit" value="Search">
 </form>
 

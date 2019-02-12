@@ -12,6 +12,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   }
 
   // user is searching for flights and Hotels
+  // this.departureDate = new Date(2019, 02, 20);
   this.populatePage = function () {
     $http({
       method:'GET',
