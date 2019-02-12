@@ -13,6 +13,12 @@ h1 {
   font-size: 54px;
   text-align: center;
 }
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
 .budget-container {
   width: 300px;
   height: 200px;

@@ -394,7 +394,7 @@ module.exports = [
   price:0,
   title:'Dog Beach',
   location:'Tel Aviv, Israel',
-  img:'../public/images/activity/dogbeach.jpeg',
+  img:'/Users/sharonmertens/dev/branchforce/public/images/activity/dogbeach.jpeg',
   dates:[]
 },
 {
@@ -482,4 +482,73 @@ module.exports = [
   img:'../public/images/activity/temple.jpg',
   dates:[]
 },
+// {
+//   type:'hotel',
+//   price:185,
+//   title:'Hotel Campo De\' Fiori',
+//   location:'Rome, Italy',
+//   img:'../public/images/hotel/campo.jpg',
+//   dates:[]
+// },
+// {
+//   type:'hotel',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   img:'',
+//   dates:[]
+// },
+// {
+//   type:'hotel',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   img:'',
+//   dates:[]
+// },
+// {
+//   type:'flight',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   dates:[]
+// },
+// {
+//   type:'flight',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   dates:[]
+// },
+// {
+//   type:'flight',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   dates:[]
+// },
+// {
+//   type:'activity',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   img:'',
+//   dates:[]
+// },
+// {
+//   type:'activity',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   img:'',
+//   dates:[]
+// },
+// {
+//   type:'activity',
+//   price:,
+//   title:'',
+//   location:'Rome, Italy',
+//   img:'',
+//   dates:[]
+// },
 ]
