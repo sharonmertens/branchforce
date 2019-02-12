@@ -21,8 +21,8 @@ router.delete('/', (req, res) => {
 
 //NEW SESSION
 router.post('/', (req, res) => {
-  console.log(req.body);
   User.findOne({username:req.body.username}, (err, foundUser) => {
+  if(err){alert("Wrong Username/Password")}else{
     if(bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
       res.status(201).json({
@@ -35,6 +35,7 @@ router.post('/', (req, res) => {
         message: 'login failed'
       });
     }
+  }
   });
 });
 
