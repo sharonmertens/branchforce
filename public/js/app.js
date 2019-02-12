@@ -108,6 +108,10 @@ app.controller('TripController', ['$http', function($http){
     })
   }
 
+  this.deleteTripCart = () => {
+      this.bookmarkedTrip.splice(0)
+  }
+
 }])
 
 // ============================ //

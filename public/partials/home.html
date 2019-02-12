@@ -1,76 +1,90 @@
+<div class="home-container">
 <h1>Home</h1>
-<div>
-  <!-- 2 search inputs . One takes a loacation the other
-takes a span of days -->
-<form ng-submit="trip.populatePage()">
-  <input type="text" placeholder="destination" ng-model="trip.location">
-  <input type="submit" value="Search">
-</form>
 
-<!-- When submitted the inforamtion gets returned on the page
-but comes back hidden and the trip catigories wich were
-previously hidden gets revelead  -->
+  <div>
+    <!-- 2 search inputs . One takes a loacation the other
+  takes a span of days -->
+  <form ng-submit="trip.populatePage()">
+    <input type="text" placeholder="destination" ng-model="trip.location">
+    <input type="submit" value="Search">
+  </form>
 
-<span ng-if="trip.listOfDestinations">
-<!-- These where hidden but after form is submitted gets revealed
-When one of these are clicked the hidden search information
-that was retrived from before gets displayed  -->
-<h3>Flights</h3>
+  <!-- When submitted the inforamtion gets returned on the page
+  but comes back hidden and the trip catigories wich were
+  previously hidden gets revelead  -->
 
-<!-- The information here is dynamic depending on the
-search paramiters. You can click a button on them to save to
-the user cart. Only one flight and hotel can be saved
-to the cart but multiple activites could be added -->
-<ul>
-  <li  ng-if="destination.type === 'flight'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} Flight to {{destination.location}}: {{destination.price | currency}}
-  <button type="button" ng-click="trip.storeData(destination)">Save</button>
-  </li>
-</ul>
+  <span ng-if="trip.listOfDestinations">
+  <!-- These where hidden but after form is submitted gets revealed
+  When one of these are clicked the hidden search information
+  that was retrived from before gets displayed  -->
+  <h3>Flights</h3>
 
-<h3>Hotels</h3>
+  <!-- The information here is dynamic depending on the
+  search paramiters. You can click a button on them to save to
+  the user cart. Only one flight and hotel can be saved
+  to the cart but multiple activites could be added -->
+  <ul>
+    <li  ng-if="destination.type === 'flight'"
+    ng-repeat="destination in trip.listOfDestinations"
+    >
+    {{destination.title}} Flight to {{destination.location}}: {{destination.price | currency}}
+    <button type="button" ng-click="trip.storeData(destination)">Save</button>
+    </li>
+  </ul>
 
-<ul>
-  <li ng-if="destination.type === 'hotel'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
-  <button type="button" ng-click="trip.storeData(destination)">Save</button>
-  </li>
-</ul>
+  <h3>Hotels</h3>
 
-<h3>Activites</h3>
+  <ul>
+    <li ng-if="destination.type === 'hotel'"
+    ng-repeat="destination in trip.listOfDestinations"
+    >
+    {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
+    <button type="button" ng-click="trip.storeData(destination)">Save</button>
+    </li>
+  </ul>
 
-<ul>
-  <li  ng-if="destination.type === 'activity'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
-  <button type="button" ng-click="trip.addEvent(destination)">Save</button>
-  </li>
-</ul>
+  <h3>Activites</h3>
 
-<!-- extra: a button to refresh the search. Wipes out previous
-search results and hides the catigorys -->
-</span>
+  <ul>
+    <li  ng-if="destination.type === 'activity'"
+    ng-repeat="destination in trip.listOfDestinations"
+    >
+    {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
+    <button type="button" ng-click="trip.addEvent(destination)">Save</button>
+    </li>
+  </ul>
+
+  <!-- extra: a button to refresh the search. Wipes out previous
+  search results and hides the catigorys -->
+  </span>
 
 
-</div>
+  </div>
 
-<!-- Users trip shopping cart -->
-<div >
-  <h2>Trip shopping cart</h2>
-  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span><button type="button" name="button">X</button> </p>
-  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
-  <p>Activites: <ul>
-    <span ng-repeat="plans in trip.bookmarkedTrip"
-      ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
-  </ul> </p>
+  <!-- Users trip shopping cart -->
+  <div >
+    <h2>Trip shopping cart</h2>
+    <p>Flight: <span ng-repeat="flightplans in trip.bookmarkedTrip"
+      ng-if="flightplans.type === 'flight'">{{flightplans.title}}/{{flightplans.location}}
+      <button>X</button>
+    </span>
+    </p>
+    <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
+      ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}
+      <button>X</button>
+    </span>
+    </p>
+    <p>Activites:
+      <ul>
+        <span ng-repeat="plans in trip.bookmarkedTrip"
+          ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li>
+          <button>X</button>
+        </span>
+      </ul>
+    </p>
 
-  <h5>Trip Total: {{trip.total()}}</h5>
-  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
+    <h5>Trip Total: {{trip.total()}}</h5>
+    <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
+    <button ng-click="trip.deleteTripCart()" type="button" name="deleteTripCart">Reset Cart</button>
+  </div>
 </div>
