@@ -199,9 +199,11 @@ app.controller('AuthController', ['$http', function($http){
       // manipulate the funds first
       if(fund === "add"){
           res.data.budget += cost
+          authCtrl.changeFunds(res.data.budget)
       }
       if(fund === "sub"){
           res.data.budget -= cost
+          authCtrl.changeFunds(res.data.budget)
       }
 
       authCtrl.userInfo = res.data
@@ -240,6 +242,21 @@ app.controller('AuthController', ['$http', function($http){
 
     },function (err) {
 
+    })
+  }
+
+  this.changeFunds = (amount) => {
+    $http({
+      method:'PUT',
+      url: '/users/change/' + authCtrl.userInfo._id,
+      data: {
+        budget: amount
+      }
+    }).then(function(response){
+      console.log('Success');
+
+    }, function(error){
+      console.log(error);
     })
   }
 
