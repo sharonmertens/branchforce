@@ -15,39 +15,12 @@
 
       <div class="sign-up-container" ng-if="!auth.userInfo" ng-controller="AuthController as auth">
       <!-- Sign Up Form -->
+
       <span ng-if="!auth.userInfo">
         <!-- Authomatic Slideshow Container -->
-          <script>
-            var i = 0; // start point
-            var images = [];
-            var time = 3000;
-
-            //Image list
-            images[0] = '/images/slideshow/bali.jpeg';
-            images[1] = '/images/slideshow/dubai.jpeg';
-            images[2] = '/images/slideshow/hawaii.jpeg';
-            images[3] = '/images/slideshow/london.jpeg';
-            images[4] = '/images/slideshow/paris.jpeg';
-            images[5] = '/images/slideshow/telaviv.jpeg';
-            images[6] = '/images/slideshow/tokyo.jpeg';
-
-            // Change Image
-            function changeImg() {
-              document.slide.src = images[i];
-
-              if (i < images.length - 1) {
-                i++;
-              } else {
-                i = 0;
-              }
-
-              setTimeout('changeImg()', time);
-            }
-
-            // want this changeImg to run when we load page
-            window.onload = changeImg; // commented this out because i was getting an error constantly in console
-          </script>
-          <img name="slide">
+        <div class="slideshow">
+          <img src="{{trip.imageSource}}" alt="">
+        </div>
 
       <h2>Sign Up</h2>
       <form ng-submit="auth.createUser()">
@@ -66,6 +39,7 @@
     </div>
 
 
+
       <!-- Display on page if user has logged in -->
     <div ng-if="auth.userInfo" class="home-page-container">
       <span ng-if="auth.userInfo">
@@ -74,7 +48,6 @@
         <a href="" ng-click="trip.changeInclude('my-trips')">My Trips</a>
         <a href="" ng-click="trip.changeInclude('about')">About</a>
         <a href="" ng-click="trip.changeInclude('contact')">Contact Us</a>
-
       <div ng-include="trip.includePath"></div>
       </span>
     </div>

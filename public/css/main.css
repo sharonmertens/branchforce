@@ -15,29 +15,68 @@ h1 {
   font-size: 54px;
   text-align: center;
 }
-
 .budget-container {
   width: 300px;
   height: 200px;
 }
 
-
+/*********************/
+/*     MY TRIPS      */
+/*********************/
+table {
+  display: table;
+  border-collapse: seperate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+/****************************/
+/*        SLIDESHOW         */
+/****************************/
+.slideshow {
+  width: 300px;
+  height: 300px;
+}
+/****************************/
+/*     CONTACT US FORM      */
+/****************************/
+/* Style inputs with type="text", select elements and textareas */
+.contact-continer input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px; /* rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* add a top margin */
+  margin-botom: 16px;
+  resize: vertical; /* Allow user to vertically resize the text area, not horizontally */
+}
 
 /* ======== SLIDESHOW SECTION ========== */
 .slideshow-container {
   width: 70%;
   display: flex;
   justify-content: space-around;
+/* Style the submit button with a sepcific background color etc... */
+input[type=submit] {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
 }
 
-.slideshow-images img {
-  width: 100%;
-  border-radius: 10px;
-  display: none;
+/* When moving the mouse over the submit button, change color to green */
+input[type=submit]:hover {
+  background-color: green;
 }
 
-.slideshow-images img:first-of-type {
-  display: block;
+/* Add a backgound color and some padding around the form */
+.contact-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 /*********************/
@@ -75,9 +114,13 @@ h1 {
 .sign-up-container input[type=submit]:hover {
   background: teal;
   color: white;
+
 }
 
 .home-page-container {
   width: 700px;
   height: 700px;
 }
+
+} */
+
