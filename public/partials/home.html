@@ -3,7 +3,16 @@
   <!-- 2 search inputs . One takes a loacation the other
 takes a span of days -->
 <form ng-submit="trip.populatePage()">
-  <input type="text" placeholder="destination" ng-model="trip.location">
+  <label for="destination">Destination:</label>
+  <select ng-model="trip.location" id="destination" name="destination">
+    <option value="london">London, England</option>
+    <option value="hawaii">Hawaii, USA</option>
+    <option value="tokyo">Tokyo, Japan</option>
+    <option value="paris">Paris, France</option>
+    <option value="dubai">Dubai, UAE</option>
+    <option value="telaviv">Tel Aviv, Israel</option>
+  </select>
+  <!-- <input type="text" placeholder="destination" ng-model="trip.location"> -->
   <input type="submit" value="Search">
 </form>
 
