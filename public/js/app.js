@@ -83,6 +83,30 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
     return true
   }
 
+
+  // =============================== //
+  //   ADD FUNDS AND CREATE BUDGET   //
+  // =============================== //
+  // this.budget = 0
+
+  this.addFunds = (id) => {
+
+    console.log(id);
+    $http({
+      method:'PUT',
+      url: '/users/budget/' + id,
+      data: {
+        budget: tripCtrl.budget
+      }
+    }).then(function(response){
+      console.log('Success');
+
+    }, function(error){
+      console.log(error);
+    })
+  }
+
+
   // Image Carousel / Slideshow
   //Image list
   this.images = [];
@@ -110,6 +134,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   this.logStuff = function (stuff) {
     console.log(stuff);
   }
+
 }])
 
 // ================================== //
@@ -155,6 +180,7 @@ app.controller('AuthController', ['$http', function($http){
 
     }, function(error){
       console.log(error);
+      alert('Username or Password Not Found!')
     });
   }
 

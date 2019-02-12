@@ -13,6 +13,10 @@ h1 {
   font-size: 54px;
   text-align: center;
 }
+.budget-container {
+  width: 300px;
+  height: 200px;
+}
 
 /*********************/
 /*     MY TRIPS      */
