@@ -13,6 +13,41 @@
     </div>
     <!-- <button ng-click="trip.addFunds(auth.userInfo._id)">Add Funds</button> -->
   <div ng-repeat="vaykay in auth.userInfo.trips">
+    <h2>{{vaykay.hotel.hotelLocation}} Trip:</h2>
+    <table>
+      <tr>
+        <th>Hotel</th>
+        <th>Price</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>{{vaykay.hotel.hotelName}}</td>
+        <td>{{vaykay.hotel.hotelPrice}}</td>
+        <td>{{vaykay.hotel.hotelLocation}}</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th>Airline</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>{{vaykay.flight.airline}}</td>
+        <td>{{vaykay.flight.flightPrice}}</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th>Activity</th>
+        <th>Price</th>
+      </tr>
+      <tr ng-repeat="activities in vaykay.activities">
+        <td>{{activities.activitiesName}}</td>
+        <td>{{activities.activitiesPrice}}</td>
+      </tr>
+    </table>
     <h2>Trip {{vaykay.overallPrice}}</h2>
     <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Remove Trip</button>
   </div>
