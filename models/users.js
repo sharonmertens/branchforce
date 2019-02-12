@@ -9,7 +9,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
     },
-  budget: Number,
+  budget: {
+    type: Number,
+    default: 0
+  },
   trips: [{
     overallPrice: Number,
     hotel: {
