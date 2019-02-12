@@ -30,6 +30,12 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
 
   // only adds one flight and hotel
   this.storeData = function (trip) {
+    trip.returnDate = this.returnDate
+    trip.departureDate = this.departureDate
+    trip.hotelCheckin = this.hotelCheckin
+    trip.hotelCheckout = this.hotelCheckout
+    trip.startLocation = this.startLocation
+
     let found = false
     for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
       if(tripCtrl.bookmarkedTrip[i].type === trip.type){
