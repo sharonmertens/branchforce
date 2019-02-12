@@ -3,7 +3,7 @@ const app = angular.module('TripApp', []);
 // ========================= //
 //      TRIP CONTROLLER      //
 // ========================= //
-app.controller('TripController', ['$http', function($http){
+app.controller('TripController', ['$http', '$timeout', function($http, $timeout){
   const tripCtrl = this;
   this.includePath = "partials/home.html"
 
@@ -83,6 +83,33 @@ app.controller('TripController', ['$http', function($http){
     return true
   }
 
+  // Image Carousel / Slideshow
+  //Image list
+  this.images = [];
+
+  this.images[0] = '/images/slideshow/bali.jpeg';
+  this.images[1] = '/images/slideshow/dubai.jpeg';
+  this.images[2] = '/images/slideshow/hawaii.jpeg';
+  this.images[3] = '/images/slideshow/london.jpeg';
+  this.images[4] = '/images/slideshow/paris.jpeg';
+  this.images[5] = '/images/slideshow/telaviv.jpeg';
+  this.images[6] = '/images/slideshow/tokyo.jpeg';
+  this.imageIndex = 0;
+
+  this.changeImg = function () {
+
+      tripCtrl.imageSource = tripCtrl.images[tripCtrl.imageIndex]; // setting the value of the source to the first image
+      tripCtrl.imageIndex ++;
+      if (tripCtrl.imageIndex > tripCtrl.images.length - 1) {
+        tripCtrl.imageIndex = 0;
+      }
+      $timeout(tripCtrl.changeImg, 3000)
+  }
+  this.changeImg();
+
+  this.logStuff = function (stuff) {
+    console.log(stuff);
+  }
 }])
 
 // ================================== //
