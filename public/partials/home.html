@@ -1,8 +1,13 @@
-<h1>Home</h1>
-<p>Your current trip budget is: {{auth.userInfo.budget | currency}}</p>
+<div class="planning-container">
+<h1>Plan Your Trip</h1>
+<div class="budget-container">
+  <p>Your current trip budget is:</p>
+  <p>{{auth.userInfo.budget | currency}}</p>
+</div>
 <div>
   <!-- 2 search inputs . One takes a loacation the other
 takes a span of days -->
+<div class="search-destination">
 <form ng-submit="trip.populatePage()">
   <!-- Drop down select menu for destination -->
   <label for="destination">Select Destination:</label>
@@ -13,6 +18,7 @@ takes a span of days -->
     <option value="Paris, France">Paris, France</option>
     <option value="Dubai, UAE">Dubai, UAE</option>
     <option value="Tel Aviv, Israel">Tel Aviv, Israel</option>
+    <option value="Bali, Indonesia">Bali, Indonesia</option>
   </select>
   <br>
   <!-- Flight Departure Date Selector -->
@@ -40,6 +46,7 @@ takes a span of days -->
   <!-- Save trip -->
   <input type="submit" value="Search">
 </form>
+</div>
 
 
 
@@ -61,6 +68,7 @@ takes a span of days -->
   <li ng-if="destination.type === 'hotel'"
   ng-repeat="destination in trip.listOfDestinations"
   >
+  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
   <button type="button" ng-click="trip.storeData(destination)">Save</button>
   </li>
@@ -72,6 +80,7 @@ takes a span of days -->
   <li  ng-if="destination.type === 'activity'"
   ng-repeat="destination in trip.listOfDestinations"
   >
+  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
   <button type="button" ng-click="trip.addEvent(destination)">Save</button>
   </li>
@@ -117,4 +126,5 @@ search results and hides the catigorys -->
   <!-- Save this trip -->
   <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
 
+</div>
 </div>

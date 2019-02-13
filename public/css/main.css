@@ -183,6 +183,28 @@ button:hover {
   justify-content: center;
   width: 600px;
   margin: 0 auto;
+  margin-top: 100px;
+}
+.budget-container {
+  text-align: center;
+  background-color: #e6e2dd;
+  height: 100px;
+  width: auto;
+  padding: 5px;
+  margin: 0 auto;
+  border-radius: 1em;
+  color: #d48166;
+}
+.search-destination {
+  margin-top: 20px;
+  border: 1px solid white;
+}
+.search-destination select {
+  appearance: none;
+  width: 100px;
+  background: #373a36;
+  border: none;
+  border-bottom: 1px solid white;
 }
 hr {
   color:#e6e2dd;
