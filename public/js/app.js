@@ -175,6 +175,8 @@ app.controller('AuthController', ['$http', function($http){
       }
     }).then(function(response){
       console.log(response);
+      authCtrl.username = ''
+      authCtrl.password = ""
     }, function () {
       console.log('error');
     })
@@ -192,6 +194,8 @@ app.controller('AuthController', ['$http', function($http){
       }
     }).then(function(response){
       console.log(response);
+      authCtrl.passwordLogIn = ''
+      authCtrl.usernameLogIn = ""
 
       authCtrl.getUserInfo()
 

@@ -124,7 +124,7 @@ search results and hides the catigorys -->
   <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
   <br>
   <!-- Save this trip -->
-  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
+  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo('sub',trip.total())">Save This Trip</button>
 
 </div>
 </div>

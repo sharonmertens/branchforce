@@ -21,8 +21,15 @@ router.delete('/', (req, res) => {
 
 //NEW SESSION
 router.post('/', (req, res) => {
-  console.log(req.body);
   User.findOne({username:req.body.username}, (err, foundUser) => {
+    console.log(err);
+    console.log(foundUser);
+  if(!foundUser){
+    res.status(404).json({
+      status:404,
+      message:"Unothorized user"
+    })
+  }else{
     if(bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
       res.status(201).json({
@@ -35,6 +42,7 @@ router.post('/', (req, res) => {
         message: 'login failed'
       });
     }
+  }
   });
 });
 
