@@ -13,7 +13,6 @@ takes a span of days -->
     <option value="Paris, France">Paris, France</option>
     <option value="Dubai, UAE">Dubai, UAE</option>
     <option value="Tel Aviv, Israel">Tel Aviv, Israel</option>
-    <option value="Bali, Indonesia">Bali, Indonesia</option>
   </select>
   <br>
   <!-- Flight Departure Date Selector -->
@@ -62,7 +61,6 @@ takes a span of days -->
   <li ng-if="destination.type === 'hotel'"
   ng-repeat="destination in trip.listOfDestinations"
   >
-  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
   <button type="button" ng-click="trip.storeData(destination)">Save</button>
   </li>
@@ -74,7 +72,6 @@ takes a span of days -->
   <li  ng-if="destination.type === 'activity'"
   ng-repeat="destination in trip.listOfDestinations"
   >
-  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
   <button type="button" ng-click="trip.addEvent(destination)">Save</button>
   </li>
@@ -84,22 +81,12 @@ takes a span of days -->
 search results and hides the catigorys -->
 </span>
 
+
+</div>
+
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
-<<<<<<< HEAD
-  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
-  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
-  <p>Activites: <ul>
-    <span ng-repeat="plans in trip.bookmarkedTrip"
-      ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
-  </ul> </p>
-
-  <h5>Trip Total: {{trip.total()}}</h5>
-  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
-=======
   <p>Flight:
     <span ng-repeat="plans in trip.bookmarkedTrip"
     ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}
@@ -129,10 +116,5 @@ search results and hides the catigorys -->
   <br>
   <!-- Save this trip -->
   <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
-<<<<<<< HEAD
-  </div>
-=======
 
->>>>>>> 580b93540184468190cf1e7d1a0b89db414a8034
->>>>>>> nateweis-dev
 </div>

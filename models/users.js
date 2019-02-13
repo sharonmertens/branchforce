@@ -9,15 +9,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-  budget: Number,
-=======
   budget: {
     type: Number,
     default: 0
   },
->>>>>>> 580b93540184468190cf1e7d1a0b89db414a8034
   trips: [{
     overallPrice: Number,
     hotel: {
