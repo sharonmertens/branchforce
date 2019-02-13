@@ -14,7 +14,7 @@ require('dotenv').config();
 // =======================================
 // Allow use of Heroku's port or your own local port, depending on the environment
 const port = process.env.PORT || 3000;
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'branchforce'
+const mongoURI = process.env.MONGODB_URI
 
 // middleware
 app.use(express.json());
