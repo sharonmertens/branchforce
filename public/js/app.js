@@ -1,9 +1,9 @@
 const app = angular.module('TripApp', []);
 
-// =================== //
-//   TRIP CONTROLLER   //
-// =================== //
-app.controller('TripController', ['$http', function($http){
+// ========================= //
+//      TRIP CONTROLLER      //
+// ========================= //
+app.controller('TripController', ['$http', '$timeout', function($http, $timeout){
   const tripCtrl = this;
   this.includePath = "partials/home.html"
 
@@ -11,9 +11,8 @@ app.controller('TripController', ['$http', function($http){
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
 
-  // ====================================== //
-  //   USER SEARCHES FOR TRIP/FLIGHT DATA   //
-  // ====================================== //
+  // user is searching for flights and Hotels
+  // this.departureDate = new Date(2019, 02, 20);
   this.populatePage = function () {
     $http({
       method:'GET',
@@ -26,13 +25,17 @@ app.controller('TripController', ['$http', function($http){
     })
   }
 
-  // ========================= //
-  //   USER STORES TRIP DATA   //
-  // ========================= //
+  // user stores their trip data
   this.bookmarkedTrip = []
 
   // only adds one flight and hotel
   this.storeData = function (trip) {
+    trip.returnDate = this.returnDate
+    trip.departureDate = this.departureDate
+    trip.hotelCheckin = this.hotelCheckin
+    trip.hotelCheckout = this.hotelCheckout
+    trip.startLocation = this.startLocation
+
     let found = false
     for (let i = 0; i < tripCtrl.bookmarkedTrip.length; i++) {
       if(tripCtrl.bookmarkedTrip[i].type === trip.type){
@@ -43,7 +46,7 @@ app.controller('TripController', ['$http', function($http){
     if(found === false){
       tripCtrl.bookmarkedTrip.push(trip)
     }
-    // console.log(tripCtrl.bookmarkedTrip);
+    console.log(tripCtrl.bookmarkedTrip);
   }
 
   // adds events
@@ -68,6 +71,14 @@ app.controller('TripController', ['$http', function($http){
     return sum
   }
 
+  // removes from cart
+  this.reomveFromList = function (event) {
+    const index = this.bookmarkedTrip.findIndex(function (find) {
+      return find.title === event.title
+    })
+    tripCtrl.bookmarkedTrip.splice(index, 1)
+  }
+
   // Add a trip to the user's Trips
   this.addTripToUser = function (id) {
     $http({
@@ -84,20 +95,70 @@ app.controller('TripController', ['$http', function($http){
     },function (err) {
       console.log(err);
     })
+    return true
   }
+
+
+  // =============================== //
+  //   ADD FUNDS AND CREATE BUDGET   //
+  // =============================== //
+  // this.budget = 0
+
+  this.addFunds = (id) => {
+
+    console.log(id);
+    $http({
+      method:'PUT',
+      url: '/users/budget/' + id,
+      data: {
+        budget: tripCtrl.budget
+      }
+    }).then(function(response){
+      console.log('Success');
+
+    }, function(error){
+      console.log(error);
+    })
+    return true
+  }
+
+
+  // Image Carousel / Slideshow
+  //Image list
+  this.images = [];
+
+  this.images[0] = '/images/slideshow/bali.jpeg';
+  this.images[1] = '/images/slideshow/dubai.jpeg';
+  this.images[2] = '/images/slideshow/hawaii.jpeg';
+  this.images[3] = '/images/slideshow/london.jpeg';
+  this.images[4] = '/images/slideshow/paris.jpeg';
+  this.images[5] = '/images/slideshow/telaviv.jpeg';
+  this.images[6] = '/images/slideshow/tokyo.jpeg';
+  this.imageIndex = 0;
+
+  this.changeImg = function () {
+
+      tripCtrl.imageSource = tripCtrl.images[tripCtrl.imageIndex]; // setting the value of the source to the first image
+      tripCtrl.imageIndex ++;
+      if (tripCtrl.imageIndex > tripCtrl.images.length - 1) {
+        tripCtrl.imageIndex = 0;
+      }
+      $timeout(tripCtrl.changeImg, 3000)
+  }
+  this.changeImg();
 
 }])
 
-// ============================ //
-//   AUTHORIZATION CONTROLLER   //
-// ============================ //
+// ================================== //
+//      AUTHORIZATION CONTROLLER      //
+// ================================== //
 app.controller('AuthController', ['$http', function($http){
 
   const authCtrl = this;
 
-  // =============== //
-  //   CREATE USER   //
-  // =============== //
+  // ================================== //
+  //          CREATE USER               //
+  // ================================== //
   this.createUser = function () {
     console.log("Create user click works");
     $http({
@@ -113,9 +174,9 @@ app.controller('AuthController', ['$http', function($http){
       console.log('error');
     })
 }
-  // =============== //
-  //   LOG IN USER   //
-  // =============== //
+  // ================================== //
+  //           LOG IN USER              //
+  // ================================== //
   this.logIn = function () {
     $http({
       method: 'POST',
@@ -131,27 +192,40 @@ app.controller('AuthController', ['$http', function($http){
 
     }, function(error){
       console.log(error);
+      alert('Username or Password Not Found!')
     });
   }
 
-  // ====================== //
-  //   RETRIEVE USER INFO   //
-  // ====================== //
+  // ================================== //
+  //           Retrive User Info        //
+  // ================================== //
 
-  this.getUserInfo = function () {
+  this.getUserInfo = function (fund,cost) {
     $http({
       method:'GET',
       url:'/sessions'
     }).then(function (res) {
+      console.log(res.data);
+
+      // manipulate the funds first
+      if(fund === "add"){
+          res.data.budget += cost
+          authCtrl.changeFunds(res.data.budget)
+      }
+      if(fund === "sub"){
+          res.data.budget -= cost
+          authCtrl.changeFunds(res.data.budget)
+      }
+
       authCtrl.userInfo = res.data
     },function (err) {
       console.log(err);
     })
   }
 
-  // ================ //
-  //   LOG OUT USER   //
-  // ================ //
+  // ================================== //
+  //           LOG OUT USER              //
+  // ================================== //
   this.logOut = function () {
     $http({
       method:'DELETE',
@@ -164,4 +238,52 @@ app.controller('AuthController', ['$http', function($http){
     })
   }
 
+  // ================================== //
+  //        Remove User Trip            //
+  // ================================== //
+
+  this.removeTrip = function (trip , id) {
+    $http({
+      method:'PUT',
+      url:'/users/remove/' + id,
+      data: trip
+    }).then(function (res) {
+      console.log(res.data);
+      authCtrl.getUserInfo('add',trip.overallPrice)
+
+    },function (err) {
+
+    })
+  }
+
+  this.changeFunds = (amount) => {
+    $http({
+      method:'PUT',
+      url: '/users/change/' + authCtrl.userInfo._id,
+      data: {
+        budget: amount
+      }
+    }).then(function(response){
+      console.log('Success');
+
+    }, function(error){
+      console.log(error);
+    })
+  }
+
+
+
 }]); // this closes the controller
+
+
+
+
+
+
+
+
+
+
+
+
+//

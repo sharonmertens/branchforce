@@ -20,30 +20,64 @@ router.post('/', (req, res) => {
   });
 });
 
+// Removing a trip from the user
+router.put('/remove/:id',(req,res) => {
+  console.log(req.body._id);
+  User.findByIdAndUpdate(req.params.id, {$pull:{trips:{_id:req.body._id}}},
+  {new:true},(err,data) => {
+    if(err){console.log(err);}
+    res.status(202).json({
+      status:202,
+      message: "Trip successfully removed"
+    })
+  })
+})
+
+router.put('/budget/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {$set:{budget:req.body.budget}}, {new:true}, (error, data) => {
+    if(error)console.log(error);
+  })
+})
+
+router.put('/change/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {$set:{budget:req.body.budget}}, {new:true}, (error, data) => {
+    if(error)console.log(error);
+  })
+})
+
+
+// Adding a trip to the user
+
 router.put('/:id',(req,res) => {
   // formating the data
   const newTrip = {};
   newTrip.hotel = {};
   newTrip.flight = {};
-  newTrip.activites = [];
-  const obj = {}
+  newTrip.activities = [];
+
   let sum = 0;
   for (let i = 0; i < req.body.length; i++) {
     sum = req.body[i].price + sum
     if(req.body[i].type === 'flight'){
       newTrip.flight.airline = req.body[i].title
-      newTrip.flight.flighPrice = req.body[i].price
+      newTrip.flight.flightPrice = req.body[i].price
       newTrip.flight.destination = req.body[i].location
+      newTrip.flight.startLocation = req.body[i].startLocation
+      newTrip.flight.departureDay = req.body[i].departureDate
+      newTrip.flight.returnDay = req.body[i].returnDate
     }
     if(req.body[i].type === 'hotel'){
       newTrip.hotel.hotelName = req.body[i].title
       newTrip.hotel.hotelPrice = req.body[i].price
       newTrip.hotel.hotelLocation = req.body[i].location
+      newTrip.hotel.hotelCheckin = req.body[i].hotelCheckin
+      newTrip.hotel.hotelCheckout = req.body[i].hotelCheckout
     }
     if(req.body[i].type === 'activity'){
-      obj.activitieName = req.body[i].title
-      obj.activitiePrice = req.body[i].price
-      newTrip.activites.push(obj)
+      let obj = {}
+      obj.activitiesName = req.body[i].title
+      obj.activitiesPrice = req.body[i].price
+      newTrip.activities.push(obj)
     }
   }
 

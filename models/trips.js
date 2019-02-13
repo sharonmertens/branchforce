@@ -96,7 +96,7 @@ module.exports = [
     type:'flight',
     price:200,
     title:'United Airlines',
-    location:'HHawaii, USA',
+    location:'Hawaii, USA',
     dates:[]
   },
   {
