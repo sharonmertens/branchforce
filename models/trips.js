@@ -413,4 +413,73 @@ module.exports = [
   img:' /images/activity/market.jpeg',
   dates:[]
 },
+{
+  type:'hotel',
+  price:150,
+  title:'The Haven Suites',
+  location:'Bali, Indonesia',
+  img:'../public/images/hotel/haven.jpg',
+  dates:[]
+},
+{
+  type:'hotel',
+  price:95,
+  title:'Good Story Surf Hotel',
+  location:'Bali, Indonesia',
+  img:'../public/images/hotel/goodstorysurf.jpg',
+  dates:[]
+},
+{
+  type:'hotel',
+  price:99,
+  title:'Hotel Udara Bali Resort & Spa',
+  location:'Bali, Indonesia',
+  img:'../public/images/hotel/udara.jpg',
+  dates:[]
+},
+{
+  type:'flight',
+  price:704,
+  title:'China Airlines',
+  location:'Bali, Indonesia',
+  dates:[]
+},
+{
+  type:'flight',
+  price:735,
+  title:'Qatar Airways',
+  location:'Bali, Indonesia',
+  dates:[]
+},
+{
+  type:'flight',
+  price:821,
+  title:'Jet Blue',
+  location:'Bali, Indonesia',
+  dates:[]
+},
+{
+  type:'activity',
+  price:5,
+  title:'Sacred Monkey Forest Sanctuary',
+  location:'Bali, Indonesia',
+  img:'../public/images/activity/monkey.jpg',
+  dates:[]
+},
+{
+  type:'activity',
+  price:25,
+  title:'Mount Batur Sunrise Hike',
+  location:'Bali, Indonesia',
+  img:'../public/images/activity/batur.jpg',
+  dates:[]
+},
+{
+  type:'activity',
+  price:7,
+  title:'Ulun Danu Bratan Temple',
+  location:'Bali, Indonesia',
+  img:'../public/images/activity/temple.jpg',
+  dates:[]
+},
 ]
