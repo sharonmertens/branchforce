@@ -39,8 +39,8 @@
       </tr>
       <tr>
         <td>{{vaykay.hotel.hotelName}}</td>
-        <td>{{trip.hotelCheckin | date: 'MM/dd/yyyy'}}</td>
-        <td>{{trip.hotelCheckout | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.hotel.hotelCheckin | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.hotel.hotelCheckout | date: 'MM/dd/yyyy'}}</td>
         <td>{{vaykay.hotel.hotelPrice | currency}}</td>
         <td>{{vaykay.hotel.hotelLocation}}</td>
       </tr>
@@ -48,14 +48,16 @@
 
     <table>
       <tr>
+        <th>Flight</th>
         <th>Departure Date</th>
         <th>Return Date</th>
         <th>Airline</th>
         <th>Price</th>
       </tr>
       <tr>
-        <td>{{trip.departureDate | date: 'MM/dd/yyyy'}}</td>
-        <td>{{trip.returnDate | date: 'MM/dd/yyyy'}}</td>
+        <td>Flight from {{vaykay.flight.startLocation}} to {{vaykay.flight.destination}}</td>
+        <td>{{vaykay.flight.departureDay | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.flight.returnDay | date: 'MM/dd/yyyy'}}</td>
         <td>{{vaykay.flight.airline}}</td>
         <td>{{vaykay.flight.flightPrice | currency}}</td>
       </tr>
@@ -71,9 +73,14 @@
         <td>{{activities.activitiesPrice | currency}}</td>
       </tr>
     </table>
+<<<<<<< HEAD
     <h2>Trip {{vaykay.overallPrice | currency}}</h2>
     <!-- Deletes Trip from My Trips -->
     <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Remove Trip</button>
+=======
+    <h2>Trip Total Cost: {{vaykay.overallPrice | currency}}</h2>
+    <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Cancle Trip</button>
+>>>>>>> nateweis-dev
   </div>
 
 

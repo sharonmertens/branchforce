@@ -62,11 +62,16 @@ router.put('/:id',(req,res) => {
       newTrip.flight.airline = req.body[i].title
       newTrip.flight.flightPrice = req.body[i].price
       newTrip.flight.destination = req.body[i].location
+      newTrip.flight.startLocation = req.body[i].startLocation
+      newTrip.flight.departureDay = req.body[i].departureDate
+      newTrip.flight.returnDay = req.body[i].returnDate
     }
     if(req.body[i].type === 'hotel'){
       newTrip.hotel.hotelName = req.body[i].title
       newTrip.hotel.hotelPrice = req.body[i].price
       newTrip.hotel.hotelLocation = req.body[i].location
+      newTrip.hotel.hotelCheckin = req.body[i].hotelCheckin
+      newTrip.hotel.hotelCheckout = req.body[i].hotelCheckout
     }
     if(req.body[i].type === 'activity'){
       let obj = {}

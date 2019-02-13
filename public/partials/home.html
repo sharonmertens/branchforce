@@ -19,6 +19,9 @@ takes a span of days -->
   <!-- Flight Departure Date Selector -->
   <label for="flight">Select Flight:</label>
   <br>
+  <label>Where Are You Flying from?</label>
+  <input ng-model="trip.startLocation" type="text" placeholder="Queens, New York">
+  <br>
   <label for="flightDeparture">Departure Date:</label>
   <input ng-model="trip.departureDate" type="date">
   <!-- Flight Return Date Selector -->
@@ -84,6 +87,19 @@ search results and hides the catigorys -->
 <!-- Users trip shopping cart -->
 <div >
   <h2>Trip shopping cart</h2>
+<<<<<<< HEAD
+  <p>Flight: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Hotel: <span ng-repeat="plans in trip.bookmarkedTrip"
+    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}</span> </p>
+  <p>Activites: <ul>
+    <span ng-repeat="plans in trip.bookmarkedTrip"
+      ng-if="plans.type === 'activity'"><li>{{plans.title}}/{{plans.location}}</li></span>
+  </ul> </p>
+
+  <h5>Trip Total: {{trip.total()}}</h5>
+  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id)">Save This Trip</button>
+=======
   <p>Flight:
     <span ng-repeat="plans in trip.bookmarkedTrip"
     ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}
@@ -113,5 +129,10 @@ search results and hides the catigorys -->
   <br>
   <!-- Save this trip -->
   <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo()">Save This Trip</button>
+<<<<<<< HEAD
   </div>
+=======
+
+>>>>>>> 580b93540184468190cf1e7d1a0b89db414a8034
+>>>>>>> nateweis-dev
 </div>
