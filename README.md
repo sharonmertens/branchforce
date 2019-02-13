@@ -15,4 +15,4 @@ Problems Encountered
 
 What to do next
 
-![dog developer](/public/images/Wireframe/wireframe1)
+![dog developer](public/images/wireframe/wireframe1.png)
