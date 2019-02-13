@@ -22,7 +22,9 @@ router.delete('/', (req, res) => {
 //NEW SESSION
 router.post('/', (req, res) => {
   User.findOne({username:req.body.username}, (err, foundUser) => {
-  if(err){
+    console.log(err);
+    console.log(foundUser);
+  if(!foundUser){
     res.status(404).json({
       status:404,
       message:"Unothorized user"
