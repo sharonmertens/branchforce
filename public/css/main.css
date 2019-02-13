@@ -176,7 +176,7 @@ button:hover {
   background: #373A36;
   color: #E6E2DD;
   font-family: 'Abel', sans-serif;
-  animation: fade-in 0.75s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .budget-container {
   text-align: center;
@@ -247,7 +247,7 @@ hr {
   margin-bottom: 25px;
   color: #e6e2dd;
   font-family: 'Abel', sans-serif;
-  animation: fade-in 0.75s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .trip-shopping-cart h2 {
   margin-bottom: 5px;
@@ -285,6 +285,7 @@ hr {
   color: #e6e2dd;
   font-family: 'Abel', sans-serif;
   font-size: 18px;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   overflow-y: scroll;
 }
 .search-results img {
@@ -335,6 +336,7 @@ i {
   color: #e6e2dd;
   padding: 20px;
   font-family: 'Abel', sans-serif;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .adjust-funds {
   display: flex;
@@ -414,6 +416,7 @@ th, td {
   color: #373A36;
   font-family: "Abel", sans-serif;
   font-size: 18px;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .about-page h3 {
   font-size: 32px;
@@ -435,6 +438,7 @@ th, td {
   background-color: #e6e2dd;
   padding: 20px;
   font-family: "Abel", sans-serif;
+  animation: fade-in 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 /* Style inputs with type="text", select elements and textareas */
 .contact-container input[type=text], select, textarea {
