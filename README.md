@@ -1,11 +1,11 @@
-# branchforce
+# TRAVELERITIS presented by Branchforce
 MEAN Stack Group Project
 ## Group Members:
 Nate Weiss, Richie Davis, Sharon Mertens
 
 ### Links
-https://traveleritis.herokuapp.com/
-https://github.com/sharonmertens/branchforce
+- https://traveleritis.herokuapp.com/
+- https://github.com/sharonmertens/branchforce
 
 ### About Our App:
 TRAVELERITIS is an app helping people book travel by selecting a destination / flight and dates / hotel and dates / activities all within a certain budget.
