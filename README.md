@@ -1,5 +1,7 @@
 # branchforce
 MEAN Stack Group Project
+## Group Members:
+
 
 TRAVELERITIS is an app helping people book travel by selecting a destination / flight and dates / hotel and dates / activities all within a certain budget.
 
