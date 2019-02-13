@@ -15,4 +15,7 @@ Problems Encountered
 
 What to do next
 
-![dog developer](public/images/wireframe/wireframe1.png)
+![Wireframe 1](public/images/wireframe/wireframe1.png)
+![Wireframe 2](public/images/wireframe/wireframe2.png)
+![Wireframe 3](public/images/wireframe/wireframe3.png)
+![Wireframe 4](public/images/wireframe/wireframe4.png)
