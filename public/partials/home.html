@@ -1,5 +1,9 @@
 <h1>Home</h1>
+<<<<<<< HEAD
+
+=======
 <p>Your current trip budget is: {{auth.userInfo.budget | currency}}</p>
+>>>>>>> dev
 <div>
   <!-- 2 search inputs . One takes a loacation the other
 takes a span of days -->
@@ -59,6 +63,7 @@ takes a span of days -->
   <li ng-if="destination.type === 'hotel'"
   ng-repeat="destination in trip.listOfDestinations"
   >
+  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
   <button type="button" ng-click="trip.storeData(destination)">Save</button>
   </li>
@@ -70,6 +75,7 @@ takes a span of days -->
   <li  ng-if="destination.type === 'activity'"
   ng-repeat="destination in trip.listOfDestinations"
   >
+  <img ng-src="{{destination.img}}" alt="">
   {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
   <button type="button" ng-click="trip.addEvent(destination)">Save</button>
   </li>

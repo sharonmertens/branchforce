@@ -4,7 +4,7 @@ module.exports = [
     price:216,
     title:'The Montague on The Gardens',
     location:'London, England',
-    img:'../public/images/hotel/montague.png',
+    img:'/images/hotel/montague.png',
     dates:[]
   },
   {
@@ -12,7 +12,7 @@ module.exports = [
     price:264,
     title:'The Chesterfield Mayfair',
     location:'London, England',
-    img:'../public/images/hotel/chesterfield.png',
+    img:'/images/hotel/chesterfield.png',
     dates:[]
   },
   {
@@ -20,7 +20,7 @@ module.exports = [
     price:85,
     title:'Park Grand London Hyde Park',
     location:'London, England',
-    img:'../public/images/hotel/parkgrand.png',
+    img:'/images/hotel/parkgrand.png',
     dates:[]
   },
   {
@@ -49,7 +49,7 @@ module.exports = [
     price:20,
     title:'Big Ben',
     location:'London, England',
-    img:'../public/images/activity/bigben.jpeg',
+    img:'/images/activity/bigben.jpeg',
     dates:[]
   },
   {
@@ -57,7 +57,7 @@ module.exports = [
     price:20,
     title:'Buckingham Palace',
     location:'London, England',
-    img:'../public/images/activity/buckingham.jpeg',
+    img:'/images/activity/buckingham.jpeg',
     dates:[]
   },
   {
@@ -65,7 +65,7 @@ module.exports = [
     price:80,
     title:'Cocktail Making Masterclass',
     location:'London, England',
-    img:'../public/images/activity/cocktails.jpeg',
+    img:'/images/activity/cocktails.jpeg',
     dates:[]
   },
   {
@@ -73,7 +73,7 @@ module.exports = [
     price:279,
     title:'Prince Waikiki',
     location:'Hawaii, USA',
-    img:'../public/images/prince.png',
+    img:'/images/prince.png',
     dates:[]
   },
   {
@@ -81,7 +81,7 @@ module.exports = [
     price:1700,
     title:'Four Seasons Resort Lanai',
     location:'Hawaii, USA',
-    img:'../public/images/fourseasons.png',
+    img:'/images/fourseasons.png',
     dates:[]
   },
   {
@@ -89,7 +89,7 @@ module.exports = [
     price:483,
     title:'Fairmont Kea Lani',
     location:'Hawaii, USA',
-    img:'../public/images/fairmont.png',
+    img:'/images/fairmont.png',
     dates:[]
   },
   {
@@ -118,7 +118,7 @@ module.exports = [
     price:135,
     title:'Molokini and Turtle Arches Snorkeling Trip',
     location:'Hawaii, USA',
-    img:'../public/images/activity/snorkeling.png',
+    img:'/images/activity/snorkeling.png',
     dates:[]
   },
   {
@@ -126,7 +126,7 @@ module.exports = [
     price:200,
     title:'Na Pali Experience',
     location:'Hawaii, USA',
-    img:'../public/images/activity/napali.png',
+    img:'/images/activity/napali.png',
     dates:[]
   },
   {
@@ -134,7 +134,7 @@ module.exports = [
     price:80,
     title:'Zipline',
     location:'Hawaii, USA',
-    img:'../public/images/activity/zipline.png',
+    img:'/images/activity/zipline.png',
     dates:[]
   },
   {
@@ -142,7 +142,7 @@ module.exports = [
     price:166,
     title:'The Royal Park Hotel Tokyo Shiodome',
     location:'Tokyo, Japan',
-    img:'../public/images/hotel/royalpark.png',
+    img:'/images/hotel/royalpark.png',
     dates:[]
   },
   {
@@ -150,7 +150,7 @@ module.exports = [
     price:74,
     title:'Dai-Ichi Hotel Ryogoku',
     location:'Tokyo, Japan',
-    img:'../public/images/hotel/dai.png',
+    img:'/images/hotel/dai.png',
     dates:[]
   },
   {
@@ -158,7 +158,7 @@ module.exports = [
     price:109,
     title:'Shinjuku Granbell Hotel',
     location:'Tokyo, Japan',
-    img:'../public/images/hotel/shinjuku.png',
+    img:'/images/hotel/shinjuku.png',
     dates:[]
   },
   {
@@ -187,7 +187,7 @@ module.exports = [
     price:30,
     title:'Tokyo Skytree',
     location:'Tokyo, Japan',
-    img:'../public/images/activity/skytree.jpeg',
+    img:'/images/activity/skytree.jpeg',
     dates:[]
   },
   {
@@ -195,7 +195,7 @@ module.exports = [
     price:18,
     title:'Meiji Jingu',
     location:'Tokyo, Japan',
-    img:'../public/images/activity/skytree.jpeg',
+    img:'/images/activity/skytree.jpeg',
     dates:[]
   },
   {
@@ -203,7 +203,7 @@ module.exports = [
     price:200,
     title:'Odaiba Entertainment Island',
     location:'Tokyo, Japan',
-    img:'../public/images/activity/odaiba.jpeg',
+    img:'/images/activity/odaiba.jpeg',
     dates:[]
   },
   {
@@ -211,7 +211,7 @@ module.exports = [
    price:798,
    title:'Shangri-La Paris',
    location:'Paris, France',
-   img:'../public/images/hotel/shangri-la-paris-2-large.jpg',
+   img:'/images/hotel/shangri-la-paris-2-large.jpg',
    dates:[]
  },
  {
@@ -219,7 +219,7 @@ module.exports = [
    price:350,
    title:'Hotel Bienvenue',
    location:'Paris, France',
-   img:'../public/images/hotel/hotelbienvenue.jphoteg',
+   img:'/images/hotel/hotelbienvenue.jphoteg',
    dates:[]
  },
  {
@@ -227,7 +227,7 @@ module.exports = [
    price:550,
    title:'Hotel Plaza Athenee',
    location:'Paris, France',
-   img:'../public/images/hotel/hotelplazaathens.jpg',
+   img:'/images/hotel/hotelplazaathens.jpg',
    dates:[]
  },
  {
@@ -256,7 +256,7 @@ module.exports = [
    price:15,
    title:'Eiffel Tower',
    location:'Paris, France',
-   img:'../public/images/activity/eiffeltower.jpeg',
+   img:'/images/activity/eiffeltower.jpeg',
    dates:[]
  },
  {
@@ -264,7 +264,7 @@ module.exports = [
    price:50,
    title:'Louvre Museum',
    location:'Paris, France',
-   img:'../public/images/activity/louvre.jpeg',
+   img:'/images/activity/louvre.jpeg',
    dates:[]
  },
  {
@@ -272,7 +272,7 @@ module.exports = [
    price:25,
    title:'Arc de Triomphe',
    location:'Paris, France',
-   img:'../public/images/activity/arc.jpeg',
+   img:'/images/activity/arc.jpeg',
    dates:[]
  },
  {
@@ -280,7 +280,7 @@ module.exports = [
    price:1130,
    title:'Bulgari Resort Dubai',
    location:'Dubai, UAE',
-   img:'../public/images/hotel/bulgari.jpeg',
+   img:'/images/hotel/bulgari.jpeg',
    dates:[]
  },
  {
@@ -288,7 +288,7 @@ module.exports = [
    price:300,
    title:'Atlantis, the Palm',
    location:'Dubai, UAE',
-   img:'../public/images/hotel/atlantis.jpeg',
+   img:'/images/hotel/atlantis.jpeg',
    dates:[]
  },
  {
@@ -296,7 +296,7 @@ module.exports = [
    price:450,
    title:'XVA Art Hotel',
    location:'Dubai, UAE',
-   img:'../public/images/hotel/xva.jpeg',
+   img:'/images/hotel/xva.jpeg',
    dates:[]
  },
  {
@@ -325,7 +325,7 @@ module.exports = [
    price:25,
    title:'The Dubai Fountain',
    location:'Dubai, UAE',
-   img:'../public/images/activity/dubaifountain.jpeg',
+   img:'/images/activity/dubaifountain.jpeg',
    dates:[]
  },
  {
@@ -333,7 +333,7 @@ module.exports = [
    price:35,
    title:'Palm Jumeirah Island',
    location:'Dubai, UAE',
-   img:'../public/images/activity/palm.jpeg',
+   img:'/images/activity/palm.jpeg',
    dates:[]
  },
  {
@@ -341,7 +341,7 @@ module.exports = [
    price:20,
    title:'Dubai Spice Souk',
    location:'Dubai, UAE',
-   img:'../public/images/activity/spice.jpeg',
+   img:'/images/activity/spice.jpeg',
    dates:[]
  },
  {
@@ -349,7 +349,7 @@ module.exports = [
   price:500,
   title:'Norman Tel Aviv',
   location:'Tel Aviv, Israel',
-  img:'../public/images/hotel/norman.jpeg',
+  img:'/images/hotel/norman.jpeg',
   dates:[]
 },
 {
@@ -357,7 +357,7 @@ module.exports = [
   price:350,
   title:'Hilton Tel Aviv',
   location:'Tel Aviv, Israel',
-  img:'../public/images/hotel/norman.jpeg',
+  img:'/images/hotel/norman.jpeg',
   dates:[]
 },
 {
@@ -365,7 +365,7 @@ module.exports = [
   price:350,
   title:'Carlton Tel Avin',
   location:'Tel Aviv, Israel',
-  img:'../public/images/hotel/carlton.jpeg',
+  img:'/images/hotel/carlton.jpeg',
   dates:[]
 },
 {
@@ -394,7 +394,7 @@ module.exports = [
   price:0,
   title:'Dog Beach',
   location:'Tel Aviv, Israel',
-  img:'../public/images/activity/dogbeach.jpeg',
+  img:'/images/activity/dogbeach.jpeg',
   dates:[]
 },
 {
@@ -402,7 +402,7 @@ module.exports = [
   price:2.5,
   title:'Coffee on Rothschild Boulevard',
   location:'Tel Aviv, Israel',
-  img:'../public/images/activity/rothschild.jpeg',
+  img:'/images/activity/rothschild.jpeg',
   dates:[]
 },
 {
@@ -410,7 +410,7 @@ module.exports = [
   price:0,
   title:'Visit the Markets Tel Aviv has to offer!',
   location:'Tel Aviv, Israel',
-  img:'../public/images/activity/market.jpeg',
+  img:' /images/activity/market.jpeg',
   dates:[]
 },
 {

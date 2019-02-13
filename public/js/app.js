@@ -10,7 +10,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   this.changeInclude = function (path) {
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
-
+  this.test = 'hello'
   // user is searching for flights and Hotels
   // this.departureDate = new Date(2019, 02, 20);
   this.populatePage = function () {
