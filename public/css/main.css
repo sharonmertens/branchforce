@@ -197,18 +197,28 @@ button:hover {
 }
 .search-destination {
   margin-top: 20px;
-  border: 1px solid white;
+
 }
-.search-destination select {
+#destination {
   appearance: none;
   width: 100px;
-  background: #373a36;
+  background: #d48166;
   border: none;
   border-bottom: 1px solid white;
+  border-radius: 0px;
+  color: white;
+  transition: 1.0s;
 }
+.search-destination label {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
 hr {
   color:#e6e2dd;
-  width: 600px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255,255,255, 0), rgba(255,255,255, 0.75), rgba(255,255,255, 0));
 }
 
 /* ----------------------------------------------
