@@ -1,0 +1,91 @@
+<div class="title-other-pages">
+  <h1>My Trips</h1>
+</div>
+
+<div class="my-trips-container">
+  <!-- Displays Current Budget - Div only opens if budget button is clicked -->
+  <h2>Current Budget: </h2>
+  <hr>
+    <div class="adjust-funds">
+      <p>{{auth.userInfo.budget | currency}}</p>
+      <button
+      ng-model="openDiv"
+      ng-click="openDiv = true"
+      name="addFunds">Adjust Budget</button>
+    </div>
+    <hr>
+    <div
+    ng-if="openDiv"
+    class="new-budget"
+    >
+      <form ng-submit="trip.addFunds(auth.userInfo._id) && auth.getUserInfo()">
+        <label>Enter new budget amount:</label>
+          <input
+          type="number"
+          ng-model="trip.budget"
+          placeholder="Enter Number Here"
+          min="1"
+          />
+          <input
+          type="submit"
+          value="Submit"
+          />
+      </form>
+    </div>
+
+  <!-- Displays Searched Trip Information -->
+  <div
+    class="my-trip-info-display"
+    ng-repeat="vaykay in auth.userInfo.trips">
+    <h2>{{trip.tripName}} Trip:</h2>
+    <table>
+      <tr>
+        <th>Hotel</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
+        <th>Price</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>{{vaykay.hotel.hotelName}}</td>
+        <td>{{vaykay.hotel.hotelCheckin | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.hotel.hotelCheckout | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.hotel.hotelLocation}}</td>
+        <td>{{vaykay.hotel.hotelPrice | currency}}</td>
+      </tr>
+    </table>
+    <hr>
+    <table>
+      <tr>
+        <th>Flight</th>
+        <th>Departure Date</th>
+        <th>Return Date</th>
+        <th>Airline</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Flight from {{vaykay.flight.startLocation}} to {{vaykay.flight.destination}}</td>
+        <td>{{vaykay.flight.departureDay | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.flight.returnDay | date: 'MM/dd/yyyy'}}</td>
+        <td>{{vaykay.flight.airline}}</td>
+        <td>{{vaykay.flight.flightPrice | currency}}</td>
+      </tr>
+    </table>
+    <hr>
+    <table>
+      <tr>
+        <th>Activity</th>
+        <th>Price</th>
+      </tr>
+      <tr ng-repeat="activities in vaykay.activities">
+        <td>{{activities.activitiesName}}</td>
+        <td>{{activities.activitiesPrice | currency}}</td>
+      </tr>
+    </table>
+    <hr>
+    <h2>Total Cost: {{vaykay.overallPrice | currency}}</h2>
+    <button
+      type="button"
+      ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">CANCEL TRIP</button>
+  </div>
+</div>

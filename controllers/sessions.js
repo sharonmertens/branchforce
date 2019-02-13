@@ -1,11 +1,17 @@
+// ================ //
+//   DEPENDENCIES   //
+// ================ //
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
-// ROUTE TO DELETE SESSION
+// ========== //
+//   ROUTES   //
+// ========== //
+// DELETE SESSION
 router.delete('/', (req, res) => {
-  res.session.destroy(() => {
+  req.session.destroy(() => {
     res.status(200).json({
       status: 200,
       message: 'logout complete'
@@ -13,12 +19,19 @@ router.delete('/', (req, res) => {
   });
 });
 
-// ROUTE TO NEW SESSION
+//NEW SESSION
 router.post('/', (req, res) => {
-  console.log(req.body);
   User.findOne({username:req.body.username}, (err, foundUser) => {
+    console.log(err);
+    console.log(foundUser);
+  if(!foundUser){
+    res.status(404).json({
+      status:404,
+      message:"Unothorized user"
+    })
+  }else{
     if(bcrypt.compareSync(req.body.password, foundUser.password)) {
-      req.session.username = foundUser.username;
+      req.session.currentUser = foundUser;
       res.status(201).json({
         status: 201,
         message: 'session created'
@@ -29,7 +42,21 @@ router.post('/', (req, res) => {
         message: 'login failed'
       });
     }
+  }
   });
 });
+
+//SENDING OVER USER DATA
+router.get('/',(req,res) => {
+  if(req.session.currentUser){
+    User.findById(req.session.currentUser._id ,(err,data) => {
+      res.json(data)
+    })
+  }else{
+    res.status(401).json({
+      message:'not logged in'
+    })
+  }
+})
 
 module.exports = router;
