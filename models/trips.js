@@ -73,7 +73,7 @@ module.exports = [
     price:279,
     title:'Prince Waikiki',
     location:'Hawaii, USA',
-    img:'/images/prince.png',
+    img:'/images/hotel/prince.png',
     dates:[]
   },
   {
@@ -81,7 +81,7 @@ module.exports = [
     price:1700,
     title:'Four Seasons Resort Lanai',
     location:'Hawaii, USA',
-    img:'/images/fourseasons.png',
+    img:'/images/hotel/fourseasons.png',
     dates:[]
   },
   {
@@ -89,7 +89,7 @@ module.exports = [
     price:483,
     title:'Fairmont Kea Lani',
     location:'Hawaii, USA',
-    img:'/images/fairmont.png',
+    img:'/images/hotel/fairmont.png',
     dates:[]
   },
   {
