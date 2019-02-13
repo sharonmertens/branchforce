@@ -10,7 +10,7 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
   this.changeInclude = function (path) {
     tripCtrl.includePath = 'partials/'+path+'.html'
   }
-
+  this.test = 'hello'
   // user is searching for flights and Hotels
   // this.departureDate = new Date(2019, 02, 20);
   this.populatePage = function () {
@@ -63,6 +63,14 @@ app.controller('TripController', ['$http', '$timeout', function($http, $timeout)
       sum = tripCtrl.bookmarkedTrip[i].price + sum
     }
     return sum
+  }
+
+  // removes from cart
+  this.reomveFromList = function (event) {
+    const index = this.bookmarkedTrip.findIndex(function (find) {
+      return find.title === event.title
+    })
+    tripCtrl.bookmarkedTrip.splice(index, 1)
   }
 
   // Add a trip to the user's Trips
