@@ -7,18 +7,13 @@ body {
   padding: 0;
 }
 
-/* div {
-  border:1px solid black;
-} */
-
 h1 {
   font-family: 'Caveat', cursive;
   font-size: 54px;
   text-align: center;
 }
-.budget-container {
-  width: 300px;
-  height: 200px;
+h2 {
+  text-align: center;
 }
 
 /*********************/
@@ -38,20 +33,6 @@ table {
   height: 200px;
   text-align: center;
 }
-/****************************/
-/*     CONTACT US FORM      */
-/****************************/
-/* Style inputs with type="text", select elements and textareas */
-.contact-container input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px;
-  border: 1px solid black;
-  border-radius: 4px; /* rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* add a top margin */
-  margin-botom: 16px;
-  resize: vertical; /* Allow user to vertically resize the text area, not horizontally */
-}
 
 /* ======== SLIDESHOW SECTION ========== */
 /* .slideshow-container {
@@ -69,18 +50,6 @@ table {
   cursor: pointer;
 
 } */
-
-/* When moving the mouse over the submit button, change color to green */
-input[type=submit]:hover {
-  background-color: green;
-}
-
-/* Add a backgound color and some padding around the form */
-.contact-container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
 /*********************/
 /*  SIGN IN/UP PAGE  */
@@ -148,6 +117,10 @@ nav {
   animation: swing-in-top-fwd 1.0s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   font-family: 'Abel', sans-serif;
 }
+nav button {
+  border: none;
+  font-family: 'Abel', sans-serif;
+}
 nav a, button {
   background: #373a36;
   font-size: 1em;
@@ -159,6 +132,7 @@ nav a, button {
   text-decoration: none;
   color: #e6e2dd;
   transition: 0.5s;
+  justify-content: center;
 }
 nav
 a:hover,
@@ -169,40 +143,50 @@ button:hover {
 /*************/
 /*  HOMEPAGE */
 /*************/
-.home-page-container {
+.arrangement-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: 0 auto;
-  width: 700px;
   height: 1000px;
-  background: #373A36;
-  color: #E6E2DD;
-  font-family: 'Abel', sans-serif;
+}
+.home-page-container {
+  width: auto;
+  height: auto;
+  margin-top: 25px;
 }
 .planning-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 100px;
+  width: 350px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #373A36;
+  color: #E6E2DD;
+  font-family: 'Abel', sans-serif;
+  animation: fade-in 0.75s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .budget-container {
   text-align: center;
   background-color: #e6e2dd;
-  height: 100px;
+  height: auto;
   width: auto;
-  padding: 5px;
   margin: 0 auto;
   border-radius: 1em;
   color: #d48166;
 }
 .search-destination {
   margin-top: 20px;
-
+  height: auto;
 }
 #destination {
   appearance: none;
-  width: 100px;
-  background: #d48166;
+  width: 200px;
+  height: 20px;
+  background: #373a36;
   border: none;
   border-bottom: 1px solid white;
   border-radius: 0px;
@@ -211,15 +195,265 @@ button:hover {
 }
 .search-destination label {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
-
+.search-destination input {
+  height: 30px;
+  border: 2px solid #d48166;
+  border-radius: 1em;
+  font-size: 18px;
+  font-family: 'Abel', sans-serif;
+}
+.search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-destination input[type="submit"] {
+  background: #d48166;
+  color: white;
+  width: 300px;
+}
 hr {
   color:#e6e2dd;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(255,255,255, 0), rgba(255,255,255, 0.75), rgba(255,255,255, 0));
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
+/* Shopping Cart */
+.cart-search-column {
+  display: flex;
+  flex-direction: column;
+}
+.trip-shopping-cart {
+  background: #373a36;
+  width: 400px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  color: #e6e2dd;
+  font-family: 'Abel', sans-serif;
+  animation: fade-in 0.75s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.trip-shopping-cart h2 {
+  margin-bottom: 5px;
+}
+.trip-shopping-cart button {
+  width: 20px;
+  height: 20px;
+  background: #d48166;
+  border: none;
+  border-radius: 2em;
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+  font-family: 'Abel', sans-serif;
+}
+.trip-shopping-cart button[name="save"] {
+  width: 300px;
+  height: 30px;
+  background: #d48166;
+  border: none;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+}
+.trip-shopping-cart label {
+  font-size: 18px;
+}
+
+/* Search Results */
+.search-results {
+  height: 620px;
+  width: 400px;
+  padding-left: 10px;
+  background: #373a36;
+  color: #e6e2dd;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+  overflow-y: scroll;
+}
+.search-results img {
+  height: 200px;
+  width: 300px;
+}
+.search-results hr {
+  margin: 0;
+}
+.search-results button {
+  width: 75px;
+  height: 30px;
+  padding: 5px;
+  margin: 0 auto;
+  background: #d48166;
+  color: #e6e2dd;
+  border: none;
+  border-radius: 2em;
+  justify-content: center;
+  font-family: 'Abel', sans-serif;
+  font-size: 12px;
+}
+.search-results li {
+  margin-top: 20px;
+  list-style: none;
+}
+
+i, h3 {
+display: inline-block;
+}
+i {
+  margin-right: 10px;
+}
+
+/* My Trips Page */
+.title-other-pages {
+  background: #373a36;
+  color: #e6e2dd;
+  border: none;
+  border-radius: 1em;
+  width: 300px;
+  margin: 0 auto;
+}
+.my-trips-container {
+  width: 700px;
+  margin: 0 auto;
+  background: #373a36;
+  color: #e6e2dd;
+  padding: 20px;
+  font-family: 'Abel', sans-serif;
+}
+.adjust-funds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.adjust-funds p {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.adjust-funds button {
+  width: 125px;
+  height: 40px;
+  padding: 5px;
+  margin: 0 auto;
+  background: #d48166;
+  color: #e6e2dd;
+  border: none;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+.budget-container {
+  width: 200px;
+  height: 75px;
+  align-items: center;
+}
+.new-budget {
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+}
+.my-trip-info-display {
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: center;
+}
+.my-trip-info-display button {
+  width: 125px;
+  height: 40px;
+  padding: 5px;
+  margin: 0 auto;
+  background: #d48166;
+  color: #e6e2dd;
+  border: none;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+th {
+  text-align: left;
+  vertical-align: top;
+  font-size: 24px;
+  color: #d48166;
+}
+
+th, td {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+  width: 100px;
+}
+
+/* About Page */
+.about-page {
+  margin: 0 auto;
+  padding: 20px;
+  width: 700px;
+  height: auto;
+  text-align: center;
+  background: white;
+  color: #373A36;
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+}
+.about-page h3 {
+  font-size: 32px;
+}
+.about-page hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/****************************/
+/*     CONTACT US FORM      */
+/****************************/
+/* Add a backgound color and some padding around the form */
+.contact-container {
+  border: none;
+  width: 700px;
+  margin: 0 auto;
+  background-color: #e6e2dd;
+  padding: 20px;
+  font-family: "Abel", sans-serif;
+}
+/* Style inputs with type="text", select elements and textareas */
+.contact-container input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px; /* rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* add a top margin */
+  margin-bottom: 16px;
+  resize: vertical; /* Allow user to vertically resize the text area, not horizontally */
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+}
+.contact-container input[type="submit"] {
+  width: 125px;
+  height: 40px;
+  padding: 5px;
+  margin: 0 auto;
+  background: #d48166;
+  color: #e6e2dd;
+  border: none;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+
+
 
 /* ----------------------------------------------
  * Generated by Animista on 2019-2-12 16:22:9
@@ -260,6 +494,24 @@ hr {
             transform: rotateX(0deg);
     -webkit-transform-origin: top;
             transform-origin: top;
+    opacity: 1;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2019-2-12 21:58:13
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }

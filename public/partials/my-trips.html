@@ -1,18 +1,25 @@
-  <h1>MY Trips</h1>
+<div class="title-other-pages">
+  <h1>My Trips</h1>
+</div>
 
+<div class="my-trips-container">
   <!-- Displays Current Budget - Div only opens if budget button is clicked -->
   <h2>Current Budget: </h2>
-    {{auth.userInfo.budget | currency}}
-    <button
-    ng-model="openDiv"
-    ng-click="openDiv = true"
-    name="addFunds">Add Funds</button>
+  <hr>
+    <div class="adjust-funds">
+      <p>{{auth.userInfo.budget | currency}}</p>
+      <button
+      ng-model="openDiv"
+      ng-click="openDiv = true"
+      name="addFunds">Adjust Budget</button>
+    </div>
+    <hr>
     <div
     ng-if="openDiv"
-    class="budget-container"
+    class="new-budget"
     >
       <form ng-submit="trip.addFunds(auth.userInfo._id) && auth.getUserInfo()">
-        <label>Enter your budgeted amount:</label>
+        <label>Enter new budget amount:</label>
           <input
           type="number"
           ng-model="trip.budget"
@@ -27,7 +34,9 @@
     </div>
 
   <!-- Displays Searched Trip Information -->
-  <div ng-repeat="vaykay in auth.userInfo.trips">
+  <div
+    class="my-trip-info-display"
+    ng-repeat="vaykay in auth.userInfo.trips">
     <h2>{{trip.tripName}} Trip:</h2>
     <table>
       <tr>
@@ -41,11 +50,11 @@
         <td>{{vaykay.hotel.hotelName}}</td>
         <td>{{vaykay.hotel.hotelCheckin | date: 'MM/dd/yyyy'}}</td>
         <td>{{vaykay.hotel.hotelCheckout | date: 'MM/dd/yyyy'}}</td>
-        <td>{{vaykay.hotel.hotelPrice | currency}}</td>
         <td>{{vaykay.hotel.hotelLocation}}</td>
+        <td>{{vaykay.hotel.hotelPrice | currency}}</td>
       </tr>
     </table>
-
+    <hr>
     <table>
       <tr>
         <th>Flight</th>
@@ -62,7 +71,7 @@
         <td>{{vaykay.flight.flightPrice | currency}}</td>
       </tr>
     </table>
-
+    <hr>
     <table>
       <tr>
         <th>Activity</th>
@@ -73,9 +82,10 @@
         <td>{{activities.activitiesPrice | currency}}</td>
       </tr>
     </table>
-    <h2>Trip Total Cost: {{vaykay.overallPrice | currency}}</h2>
-    <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Cancle Trip</button>
+    <hr>
+    <h2>Total Cost: {{vaykay.overallPrice | currency}}</h2>
+    <button
+      type="button"
+      ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">CANCEL TRIP</button>
   </div>
-
-
- <!-- ng-init="trNum = auth.tripNumber++" -->
+</div>
