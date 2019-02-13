@@ -63,7 +63,7 @@ table {
   padding: 50px;
   width: 400px;
   background: rgba(255,255,255,0.9);
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Abel', sans-serif;
 }
 .sign-up-container h2:first-child {
   margin-top: 0;
@@ -76,24 +76,33 @@ table {
 .sign-up-container h2 {
   color: #373A36;
 }
-/* .sign-up-container form {
-  border-radius: 1em;
-} */
 .sign-up-container input {
   height: 40px;
-  border-radius: 1.25em;
   border: 2px solid #D48166;
+  transition: 0.25s;
+  font-size: 18px;
+}
+.sign-up-container input:hover {
+  height: 40px;
+  border-radius: 1.25em;
+  border: 2px solid #373a36;
+  transition: 0.25s;
 }
 .sign-up-container input[type=submit] {
-  height: 40px;
-  width: 100px;
+  width: 75px;
+  height: 45px;
+  margin-top: 10px;
+  border-radius: 1.25em;
   background: #D48166;
   color: #E6E2DD;
+  font-family: 'Abel', sans-serif;
+  transition: 0.25s;
 }
 .sign-up-container input[type=submit]:hover {
-  background: teal;
+  background: #373A36;
   color: white;
-  border: 2px solid teal;
+  border: 2px solid #373a36;
+  transition: 0.25s;
 }
 
 /***********/
@@ -189,9 +198,11 @@ button:hover {
   background: #373a36;
   border: none;
   border-bottom: 1px solid white;
-  border-radius: 0px;
   color: white;
   transition: 1.0s;
+}
+option {
+  font-size: 18px;
 }
 .search-destination label {
   font-size: 24px;
