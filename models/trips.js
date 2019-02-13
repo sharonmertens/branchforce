@@ -195,7 +195,7 @@ module.exports = [
     price:18,
     title:'Meiji Jingu',
     location:'Tokyo, Japan',
-    img:'../public/images/activity/skytree.jpeg',
+    img:'/images/activity/skytree.jpeg',
     dates:[]
   },
   {
