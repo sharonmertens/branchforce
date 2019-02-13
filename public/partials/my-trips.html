@@ -1,17 +1,32 @@
   <h1>MY Trips</h1>
 
+  <!-- Displays Current Budget - Div only opens if budget button is clicked -->
   <h2>Current Budget: </h2>
     {{auth.userInfo.budget | currency}}
-    <button ng-model="openDiv" ng-click="openDiv = true" type="button" name="addFunds">Add Funds</button>
-    <div id="target"></div>
-    <div ng-if="openDiv" class="budget-container">
+    <button
+    ng-model="openDiv"
+    ng-click="openDiv = true"
+    name="addFunds">Add Funds</button>
+    <div
+    ng-if="openDiv"
+    class="budget-container"
+    >
       <form ng-submit="trip.addFunds(auth.userInfo._id) && auth.getUserInfo()">
-        <label>How much money would you like to add?</label>
-          <input type="number" ng-model="trip.budget" placeholder="Enter Number Here" min="1">
-          <input type="submit" value="Submit"/>
+        <label>Enter your budgeted amount:</label>
+          <input
+          type="number"
+          ng-model="trip.budget"
+          placeholder="Enter Number Here"
+          min="1"
+          />
+          <input
+          type="submit"
+          value="Submit"
+          />
       </form>
     </div>
-    <!-- <button ng-click="trip.addFunds(auth.userInfo._id)">Add Funds</button> -->
+
+  <!-- Displays Searched Trip Information -->
   <div ng-repeat="vaykay in auth.userInfo.trips">
     <h2>{{trip.tripName}} Trip:</h2>
     <table>
@@ -57,6 +72,7 @@
       </tr>
     </table>
     <h2>Trip {{vaykay.overallPrice | currency}}</h2>
+    <!-- Deletes Trip from My Trips -->
     <button type="button" ng-click="auth.removeTrip(vaykay,auth.userInfo._id)">Remove Trip</button>
   </div>
 
