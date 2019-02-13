@@ -1,120 +1,160 @@
-<h1>Home</h1>
-<p>Your current trip budget is: {{auth.userInfo.budget | currency}}</p>
-<div>
-  <!-- 2 search inputs . One takes a loacation the other
-takes a span of days -->
-<form ng-submit="trip.populatePage()">
-  <!-- Drop down select menu for destination -->
-  <label for="destination">Select Destination:</label>
-  <select ng-model="trip.location" id="destination" name="destination">
-    <option value="London, England">London, England</option>
-    <option value="Hawaii, USA">Hawaii, USA</option>
-    <option value="Tokyo, Japan">Tokyo, Japan</option>
-    <option value="Paris, France">Paris, France</option>
-    <option value="Dubai, UAE">Dubai, UAE</option>
-    <option value="Tel Aviv, Israel">Tel Aviv, Israel</option>
-  </select>
-  <br>
-  <!-- Flight Departure Date Selector -->
-  <label for="flight">Select Flight:</label>
-  <br>
-  <label>Where Are You Flying from?</label>
-  <input ng-model="trip.startLocation" type="text" placeholder="Queens, New York">
-  <br>
-  <label for="flightDeparture">Departure Date:</label>
-  <input ng-model="trip.departureDate" type="date">
-  <!-- Flight Return Date Selector -->
-  <label for="flightReturn">Return Date:</label>
-  <input ng-model="trip.returnDate" type="date">
-  <br>
-  <!-- Hotel Checkin Date Selector -->
-  <label for="hotel">Select Hotel:</label>
-  <br>
-  <label for="checkin">Hotel Check-in:</label>
-  <input ng-model="trip.hotelCheckin" type="date">
-  <!-- Flight Return Date Selector -->
-  <label for="checkout">Hotel Checkout:</label>
-  <input ng-model="trip.hotelCheckout" type="date">
-  <!-- <input type="text" placeholder="destination" ng-model="trip.location"> -->
-  <br>
-  <!-- Save trip -->
-  <input type="submit" value="Search">
-</form>
+<div class="arrangement-row">
+  <div class="planning-container">
+  <h1>Plan Your Trip</h1>
+    <div class="budget-container">
+      <p>Your current trip budget is: <br>
+        {{auth.userInfo.budget | currency}}</p>
+    </div>
 
+      <!-- 2 search inputs . One takes a loacation the other
+    takes a span of days -->
+    <div class="search-destination">
+    <form ng-submit="trip.populatePage()">
+      <!-- Drop down select menu for destination -->
+      <hr>
+      <label for="destination">DESTINATION</label>
+      <br>
+      <select ng-model="trip.location" id="destination" name="destination">
+        <option value="London, England">London, England</option>
+        <option value="Hawaii, USA">Hawaii, USA</option>
+        <option value="Tokyo, Japan">Tokyo, Japan</option>
+        <option value="Paris, France">Paris, France</option>
+        <option value="Dubai, UAE">Dubai, UAE</option>
+        <option value="Tel Aviv, Israel">Tel Aviv, Israel</option>
+        <option value="Bali, Indonesia">Bali, Indonesia</option>
+      </select>
+      <br>
+      <!-- Flight Departure Date Selector -->
+      <hr>
+      <label for="flight">FLIGHT</label>
+      <br>
+      <label>Where Are You Flying From?</label>
+      <br>
+      <input ng-model="trip.startLocation" type="text" placeholder="Queens, New York">
+      <br>
+      <label for="flightDeparture">Departure Date:</label>
+      <br>
+      <input ng-model="trip.departureDate" type="date">
+      <!-- Flight Return Date Selector -->
+      <br>
+      <label for="flightReturn">Return Date:</label>
+      <br>
+      <input ng-model="trip.returnDate" type="date">
+      <br>
+      <!-- Hotel Checkin Date Selector -->
+      <hr>
+      <label for="hotel">HOTEL</label>
+      <br>
+      <label for="checkin">Hotel Check-In:</label>
+      <br>
+      <input ng-model="trip.hotelCheckin" type="date">
+      <!-- Flight Return Date Selector -->
+      <br>
+      <label for="checkout">Hotel Check-Out:</label>
+      <br>
+      <input ng-model="trip.hotelCheckout" type="date">
+      <!-- <input type="text" placeholder="destination" ng-model="trip.location"> -->
+      <br>
+      <!-- Save trip -->
+      <hr>
+      <div class="search-submit">
+        <input
+          type="submit"
+          value="Search"
+          >
+      </div>
+    </form>
+    </div>
+  </div>
+  <div class="cart-search-column">
+    <!-- Users trip shopping cart -->
+    <div
+      class="trip-shopping-cart"
+      >
+      <h2>TRIP SHOPPING CART</h2>
+      <!-- Give your trip a name -->
+      <label for="tripName">Trip Name:</label>
+      <br>
+        <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
+        <br>
+      <label for="">Flight:</label>
+        <span
+          ng-repeat="plans in trip.bookmarkedTrip"
+          ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}
+        <button
+          type="button"
+          ng-click="trip.reomveFromList(plans)">X</button>
+      </span>
+      <br>
+      <label for="">Hotel:</label>
+         <span ng-repeat="plans in trip.bookmarkedTrip"
+        ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}
+        <button type="button" ng-click="trip.reomveFromList(plans)">X</button>
+      </span>
+      <br>
+      <label for="">Activites:</label>
+      <ul>
+        <span ng-repeat="plans in trip.bookmarkedTrip"
+          ng-if="plans.type === 'activity'">
+          <li>{{plans.title}}/{{plans.location}}
+          <button type="button" ng-click="trip.reomveFromList(plans)">X</button> </li>
+        </span>
+      </ul>
 
+      <h4>Trip Total:
+        <br>{{trip.total() | currency}}</h4>
+      <br>
+      <!-- Save this trip -->
+      <button
+      type="button"
+      name="save"
+      ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo('sub',trip.total())"
+      >Save Trip</button>
 
-<span ng-if="trip.listOfDestinations">
+      </div>
+    <div
+      ng-if="trip.listOfDestinations"
+      class="search-results"
+      >
+      <span><i class="fas fa-plane"></i><h3>Flights</h3></span>
+      <hr>
+      <ul>
+        <li
+          ng-if="destination.type === 'flight'"
+          ng-repeat="destination in trip.listOfDestinations"
+          >
+        {{destination.title}} Flight to {{destination.location}}: <br>{{destination.price | currency}}
+        <button type="button" ng-click="trip.storeData(destination)">Save</button>
+        </li>
+      </ul>
 
-<h3>Flights</h3>
-<ul>
-  <li  ng-if="destination.type === 'flight'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} Flight to {{destination.location}}: {{destination.price | currency}}
-  <button type="button" ng-click="trip.storeData(destination)">Save</button>
-  </li>
-</ul>
+    <span><i class="fas fa-hotel"></i><h3>Hotels</h3></span>
+      <hr>
+      <ul>
+        <li
+          ng-if="destination.type === 'hotel'"
+          ng-repeat="destination in trip.listOfDestinations"
+          >
+        <img ng-src="{{destination.img}}" alt="">
+        <br>
+        {{destination.title}} Hotel Stay in {{destination.location}}: <br>{{destination.price | currency}} per day
+        <button type="button" ng-click="trip.storeData(destination)">Save</button>
+        </li>
+      </ul>
 
-<h3>Hotels</h3>
-
-<ul>
-  <li ng-if="destination.type === 'hotel'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} Hotel Stay in {{destination.location}}: {{destination.price | currency}} per day
-  <button type="button" ng-click="trip.storeData(destination)">Save</button>
-  </li>
-</ul>
-
-<h3>Activites</h3>
-
-<ul>
-  <li  ng-if="destination.type === 'activity'"
-  ng-repeat="destination in trip.listOfDestinations"
-  >
-  {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
-  <button type="button" ng-click="trip.addEvent(destination)">Save</button>
-  </li>
-</ul>
-
-<!-- extra: a button to refresh the search. Wipes out previous
-search results and hides the catigorys -->
-</span>
-
-
-</div>
-
-<!-- Users trip shopping cart -->
-<div >
-  <h2>Trip shopping cart</h2>
-  <p>Flight:
-    <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'flight'">{{plans.title}}/{{plans.location}}
-    <button type="button" ng-click="trip.reomveFromList(plans)">X</button>
-  </span>
-</p>
-
-  <p>Hotel:
-     <span ng-repeat="plans in trip.bookmarkedTrip"
-    ng-if="plans.type === 'hotel'">{{plans.title}}/{{plans.location}}
-    <button type="button" ng-click="trip.reomveFromList(plans)">X</button>
-  </span>
-</p>
-  <p>Activites: <ul>
-    <span ng-repeat="plans in trip.bookmarkedTrip"
-      ng-if="plans.type === 'activity'">
-      <li>{{plans.title}}/{{plans.location}}
-      <button type="button" ng-click="trip.reomveFromList(plans)">X</button> </li>
-    </span>
-  </ul> </p>
-
-
-  <h5>Trip Total: {{trip.total() | currency}}</h5>
-  <!-- Give your trip a name -->
-  <label for="tripName">Trip Name:</label>
-  <input ng-model="trip.tripName" type="text" placeholder="Trip Name">
-  <br>
-  <!-- Save this trip -->
-  <button type="button" ng-click="trip.addTripToUser(auth.userInfo._id) && auth.getUserInfo('sub',trip.total())">Save This Trip</button>
-
+      <span><i class="fas fa-store"></i><h3>Activites</h3></span>
+      <hr>
+      <ul>
+        <li
+          ng-if="destination.type === 'activity'"
+          ng-repeat="destination in trip.listOfDestinations"
+          >
+        <img ng-src="{{destination.img}}" alt="">
+        <br>
+        {{destination.title}} in {{destination.location}}: <br>{{destination.price | currency}}
+        <button type="button" ng-click="trip.addEvent(destination)">Save</button>
+        </li>
+      </ul>
+    </div>
+    </div>
 </div>
