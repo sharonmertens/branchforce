@@ -1,4 +1,7 @@
-<h1>Home</h1>
+<h1>Home
+
+</h1>
+<img src="{{trip.listOfDestinations[0].img}}" alt="">
 <div>
   <!-- 2 search inputs . One takes a loacation the other
 takes a span of days -->
@@ -81,6 +84,7 @@ to the cart but multiple activites could be added -->
   <li  ng-if="destination.type === 'activity'"
   ng-repeat="destination in trip.listOfDestinations"
   >
+  <img src="{{destination.img}}" alt="">
   {{destination.title}} in {{destination.location}}: {{destination.price | currency}}
   <button type="button" ng-click="trip.addEvent(destination)">Save</button>
   </li>
