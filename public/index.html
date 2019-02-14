@@ -65,7 +65,6 @@
 
   <!-- Display on page if user has logged in -->
     <nav
-      ng-controller="AuthController as auth"
       ng-if="auth.userInfo"
       >
       <a href="" ng-click="trip.changeInclude('home')">Home</a>
