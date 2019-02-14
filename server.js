@@ -26,6 +26,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
+
 // Users controller
 const userController = require('./controllers/users.js');
 app.use('/users', userController);
@@ -47,7 +48,7 @@ db.on('connected', () => console.log('mongo connected: ', mongoURI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 // connect to mongoose
-mongoose.connect('mongodb://localhost:27017/branchforce', { useNewUrlParser: true});
+mongoose.connect(mongoURI, { useNewUrlParser: true});
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose...');
 });
