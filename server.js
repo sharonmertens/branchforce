@@ -7,11 +7,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const db = mongoose.connection;
-<<<<<<< HEAD
 require('dotenv').config();
-=======
-require('dotenv').config()
->>>>>>> 300869de65c9e64c2ea8d47e60d16d22be6199e3
 
 // =======================================
 //             CONFIGURATION
